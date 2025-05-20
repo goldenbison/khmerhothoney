@@ -940,30 +940,29 @@
                     <div data-en="Follow us for updates and exclusive offers:" data-km="តាមដានយើងសម្រាប់ព័ត៌មានថ្មីៗនិងការផ្តល់ជូនពិសេសៗ៖">Follow us for updates and exclusive offers:</div>
                     <br/>
                     <div class="social-icons">
-                        <!-- Facebook: Updated URL schemes for better mobile compatibility -->
-                        <a href="fb://page/khmerhothoney" 
-                           onclick="openSocialApp(this, 'https://www.facebook.com/khmerhothoney'); return false;" 
+                        <!-- Facebook: Using fb://page/ with the numerical Page ID is more reliable for pages -->
+                        <a href="fb://page/669737789550466"
+                           onclick="openSocialApp(this, 'https://www.facebook.com/khmerhothoney'); return false;"
                            target="_blank" aria-label="Follow us on Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        
-                        <!-- Instagram: This seems to be working fine -->
-                        <a href="instagram://user?username=khmerhothoney" 
-                           onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;" 
+
+                        <!-- Instagram: This scheme and the fallback logic usually work well -->
+                        <a href="instagram://user?username=khmerhothoney"
+                           onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;"
                            target="_blank" aria-label="Follow us on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        
-                        <!-- TikTok: Updated URL schemes for better mobile compatibility -->
-                        <a href="tiktok://user/khmerhothoney" 
-                           onclick="openSocialApp(this, 'https://www.tiktok.com/@khmerhothoney'); return false;" 
+
+                        <!-- TikTok: App schemes can be unreliable. Using the standard web URL and letting the browser handle the "open in app" prompt is often more consistent. Removed the onclick as it's not needed for a standard web URL -->
+                        <a href="https://www.tiktok.com/@khmerhothoney"
                            target="_blank" aria-label="Follow us on TikTok">
                             <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
-                    <br/>
-                </div>
 
+                </div>
+                <br/>
                 <div class="footer-nav">
                     <div class="footer-section">
                         <h3 data-en="Explore" data-km="រុករក">Explore</h3>
@@ -972,7 +971,7 @@
                             <li><a href="shop.html" data-en="Shop" data-km="ទិញ">Shop</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="footer-section">
                         <h3 data-en="About" data-km="អំពីយើង">About</h3>
                         <ul>
@@ -980,18 +979,18 @@
                             <li><a href="about.html#our-process" data-en="Process" data-km="ដំណើរការ">Process</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="footer-section">
                         <h3 data-en="Contact" data-km="ទំនាក់ទំនង">Contact</h3>
                         <ul>
                             <li><a href="contact.html" data-en="Message Us" data-km="ផ្ញើសារមកយើង">Message Us</a></li>
-                            <li><a href="khmerhothoney@gmail.com" data-en="khmerhothoney@gmail.com" data-km="khmerhothoney@gmail.com">khmerhothoney@gmail.com</a></li>
+                            <li><a href="mailto:khmerhothoney@gmail.com" data-en="khmerhothoney@gmail.com" data-km="khmerhothoney@gmail.com">khmerhothoney@gmail.com</a></li>
                             <li><a href="tel:+85577833666" data-en="+855 77 833 666" data-km="+855 77 833 666">+855 77 833 666</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="social-bar">
                     <p data-en="© 2025 Khmer Hot Honey. All rights reserved." data-km="© 2025 ទឹកឃ្មុំហឺរខ្មែរ។ រក្សាសិទ្ធិគ្រប់យ៉ាង។">© 2025 Khmer Hot Honey. All rights reserved.</p>
@@ -999,7 +998,6 @@
             </div>
         </div>
     </footer>
-
     <!-- Import modules -->
     <script type="module" src="js/firebase-config.js"></script>
     <script src="js/language.js"></script>
@@ -1007,73 +1005,25 @@
     <script type="module" src="js/qr-tracking.js"></script>
     <script type="module" src="js/main.js"></script>
     <script>
+        // openSocialApp function is still needed for Facebook and Instagram (with app schemes)
         function openSocialApp(link, fallbackUrl) {
-            // Get the app URL and fallback URL
             const appUrl = link.getAttribute('href');
-            const fbUrl = fallbackUrl;
-            
-            // Detect platform
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            const isAndroid = /android/i.test(navigator.userAgent);
-            
-            // Check if this is Facebook link
-            const isFacebookLink = appUrl.includes('fb://');
-            // Check if this is TikTok link
-            const isTikTokLink = appUrl.includes('tiktok://');
-            
-            // Special handling for Facebook on iOS
-            if (isFacebookLink && isIOS) {
-                // For iOS, use a different URL scheme
-                const iosAppUrl = appUrl.replace('fb://page/', 'fb://profile/');
-                tryOpenApp(iosAppUrl, fbUrl);
-                return false;
-            }
-            
-            // Special handling for TikTok on both platforms
-            if (isTikTokLink) {
-                if (isIOS) {
-                    // iOS TikTok app URL
-                    const iosTikTokUrl = 'tiktok://user/khmerhothoney';
-                    tryOpenApp(iosTikTokUrl, fallbackUrl);
-                } else if (isAndroid) {
-                    // Android TikTok app URL
-                    const androidTikTokUrl = 'https://www.tiktok.com/@khmerhothoney';
-                    window.location = androidTikTokUrl;
-                } else {
-                    // Fallback to web
-                    window.open(fallbackUrl, '_blank');
-                }
-                return false;
-            }
-            
-            // Standard handling for other cases
-            tryOpenApp(appUrl, fallbackUrl);
-            return false;
-            
-            // Helper function to try opening the app
-            function tryOpenApp(appUrl, webUrl) {
-                // Set a timeout to open the fallback URL if the app doesn't open
-                const timeout = setTimeout(function() {
-                    window.open(webUrl, '_blank');
-                }, 1500); // Increased timeout for slower devices
-                
-                // Try to open the app
-                window.location = appUrl;
-                
-                // Clear the timeout if the page is hidden (user likely went to the app)
-                document.addEventListener('visibilitychange', function() {
-                    if (document.hidden) {
-                        clearTimeout(timeout);
-                    }
-                });
-                
-                // Also check for window blur event (older method)
-                window.addEventListener('blur', function() {
+            const timeout = setTimeout(function() {
+                window.open(fallbackUrl, '_blank');
+            }, 1000); // Adjust timeout if needed (1000ms = 1 second)
+            window.location = appUrl; // Attempt to open the app scheme
+             // Clear timeout if the app switch happens (window loses focus)
+            window.addEventListener('blur', function() {
+                clearTimeout(timeout);
+            });
+            // Also attempt to clear if the page visibility changes
+            document.addEventListener('visibilitychange', function() {
+                 if (document.visibilityState === 'hidden') {
                     clearTimeout(timeout);
-                });
-            }
+                 }
+            });
+            return false; // Prevent default link behavior
         }
-
         // Ensure mobile menu works
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
@@ -1083,6 +1033,19 @@
                     document.querySelector('.hamburger').classList.toggle('active');
                 });
             }
+
+            // Added smooth scrolling for footer #our-process link
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Only handle clicks on the current page
+                    if (this.pathname === window.location.pathname) {
+                         e.preventDefault();
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
