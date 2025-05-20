@@ -29,7 +29,7 @@
                     <li><a href="index.html" class="nav-link" id="nav-recipes" data-en="Uses" data-km="ការប្រើប្រាស់">Uses</a></li>
                     <li><a href="shop.html" class="nav-link" id="nav-shop" data-en="Shop" data-km="ទិញ">Shop</a></li>
                     <li><a href="about.html" class="nav-link" id="nav-about" data-en="About" data-km="អំពី​">About</a></li>
-                    <li><a href="contact.html" class="nav-link active" id="nav-contact" data-en="Contact" data-km="ទំនាក់ទំនង">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link" id="nav-contact" data-en="Contact" data-km="ទំនាក់ទំនង">Contact</a></li>
                 </ul>
                 <div class="nav-icons">
                     <div class="language-toggle">
@@ -229,25 +229,10 @@
                     
                     <div class="footer-section">
                         <h3 data-en="Contact" data-km="ទំនាក់ទំនង">Contact</h3>
-                        <ul class="contact-list">
-                            <li>
-                                <a href="contact.html" data-en="Message Us" data-km="ផ្ញើសារមកយើង">
-                                    <span class="contact-icon">💬</span>
-                                    <span>Message Us</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailto:khmerhothoney@gmail.com" data-en="khmerhothoney@gmail.com" data-km="khmerhothoney@gmail.com">
-                                    <span class="contact-icon">✉️</span>
-                                    <span>khmerhothoney@gmail.com</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tel:+85577833666" data-en="+855 77 833 666" data-km="+855 77 833 666">
-                                    <span class="contact-icon">📞</span>
-                                    <span>+855 77 833 666</span>
-                                </a>
-                            </li>
+                        <ul>
+                            <li><a href="contact.html" data-en="Message Us" data-km="ផ្ញើសារមកយើង">Message Us</a></li>
+                            <li><a href="khmerhothoney@gmail.com" data-en="khmerhothoney@gmail.com" data-km="khmerhothoney@gmail.com">khmerhothoney@gmail.com</a></li>
+                            <li><a href="tel:+85577833666" data-en="+855 77 833 666" data-km="+855 77 833 666">+855 77 833 666</a></li>
                         </ul>
                     </div>
                 </div>
@@ -287,6 +272,18 @@
                 menuToggle.addEventListener('click', function() {
                     document.querySelector('.nav-links').classList.toggle('active');
                     document.querySelector('.hamburger').classList.toggle('active');
+                });
+            }
+        });
+
+        // Ensure mobile menu works - direct inline script
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    document.querySelector('.nav-links').classList.toggle('active');
+                    document.querySelector('.hamburger').classList.toggle('active');
+                    console.log('Menu toggled from inline script');
                 });
             }
         });
