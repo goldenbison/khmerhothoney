@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khmer Hot Honey | Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="sticky-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="menu-toggle">
+                    <div class="hamburger"></div>
+                </div>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Khmer Hot Honey Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link" id="nav-recipes" data-en="Uses" data-km="ការប្រើប្រាស់">Uses</a></li>
+                    <li><a href="shop.html" class="nav-link" id="nav-shop" data-en="Shop" data-km="ទិញ">Shop</a></li>
+                    <li><a href="about.html" class="nav-link" id="nav-about" data-en="About" data-km="អំពី​">About</a></li>
+                    <li><a href="contact.html" class="nav-link" id="nav-contact" data-en="Contact" data-km="ទំនាក់ទំនង">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="language-toggle">
+                        <button id="lang-toggle" data-current="en">
+                            <img src="img/en.png" alt="English" class="lang-icon en-icon">
+                            <img src="img/kh.png" alt="Khmer" class="lang-icon kh-icon hidden">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Shop Hero Section -->
+        <section class="hero shop-hero">
+            <div class="hero-content">
+                <h2 class="script-font" data-en="Get Your" data-km="ទិញយក">Get Your</h2>
+                <h3 class="hero-title" data-en="SWEET-HEAT COMBO" data-km="ទឹកឃ្មុំហឺរខ្មែរ">SWEET-HEAT COMBO</h3>
+            </div>
+        </section>
+    
+        <!-- New Shop Layout with Single Product on Left and Purchase Info on Right -->
+        <div class="shop-layout-container">
+            <!-- Product Section (Left Side) -->
+            <div class="product-section">
+                <!-- Single Product Card Styled Like the Image -->
+                <div class="product-card-new">
+                    <div class="product-image-container">
+                        <img src="img/shop-125ml.jpg" alt="Khmer Hot Honey">
+                    </div>
+                    <div class="product-info-new">
+                        <div class="product-title-bar" data-en="125ML BOTTLE" data-km="ដបទឹកឃ្មុំ 125ML">
+                            125ML BOTTLE
+                        </div>
+                        <div class="product-price-bar" data-en="$ 3.99 USD" data-km="$ 3.99 USD">
+                            $ 3.99 USD
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Purchase Information Section (Right Side) -->
+            <div class="purchase-section">
+                <section class="shop-intro">
+                    <div class="product-card">
+                        <div class="intro-text">
+                            <h2 data-en="How to Purchase" data-km="របៀបទិញ">How to Purchase</h2>
+                            <p data-en="Our products are available through our social media platforms. Message us on Facebook, Instagram, or TikTok to place your order." 
+                               data-km="ផលិតផលរបស់យើងមានលក់តាមរយៈបណ្តាញសង្គមរបស់យើង។ ទាក់ទងមកយើងតាម Facebook, Instagram, ឬ TikTok ដើម្បីកម្ម៉ង់។">
+                                Our products are available through our social media platforms. Connect with us on Facebook, Instagram, or TikTok to place your order.
+                            </p>
+                            <div class="social-purchase-buttons">
+                                <a href="fb://profile/khmerhothoney" 
+                                   onclick="openSocialApp(this, 'https://www.facebook.com/khmerhothoney'); return false;" 
+                                   target="_blank" class="social-btn facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                    <span data-en="Order via Facebook" data-km="កម្ម៉ង់តាម Facebook">Order via Facebook</span>
+                                </a>
+                                <a href="instagram://user?username=khmerhothoney" 
+                                   onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;" 
+                                   target="_blank" class="social-btn instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    <span data-en="Order via Instagram" data-km="កម្ម៉ង់តាម Instagram">Order via Instagram</span>
+                                </a>
+                                <a href="tiktok://user?username=khmerhothoney" 
+                                   onclick="openSocialApp(this, 'https://www.tiktok.com/@khmerhothoney'); return false;" 
+                                   target="_blank" class="social-btn tiktok">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span data-en="Order via TikTok" data-km="កម្ម៉ង់តាម TikTok">Order via TikTok</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bold-modern">
+        <div class="footer-content">
+            <div class="footer-main">
+                <!-- <div class="footer-brand">
+                    <div class="footer-logo">
+                        <h2>Khmer <span>Hot Honey</span></h2>
+                    </div>
+                    <p class="footer-description" data-en="Authentic Cambodian-inspired hot honey made with premium ingredients and traditional recipes. Perfect for drizzling, dipping, and adding delicious heat to any meal." data-km="ទឹកឃ្មុំហឺរខ្មែរដែលមានប្រភពចម្លងពីខ្មែរ ផលិតឡើងជាមួយគ្រឿងផ្សំដ៏ល្អប្រណិត និងរូបមន្តប្រពៃណី។ ល្អឥតខ្ចោះសម្រាប់ស្រោច ជ្រលក់ និងបន្ថែមរសជាតិហឺរឆ្ងាញ់ទៅលើគ្រប់អាហារ។">
+                        Authentic Cambodian-inspired hot honey made with premium ingredients and traditional recipes. Perfect for drizzling, dipping, and adding delicious heat to any meal.
+                    </p>
+                </div> -->
+                
+                <div class="footer-section">
+                    <h3 data-en="Socialize with Us" data-km="ប្រព័ន្ធផ្សព្វផ្សាយសង្គមរបស់យើង">Socialize with Us</h3>
+                    <div data-en="Follow us for updates and exclusive offers:" data-km="តាមដានយើងសម្រាប់ព័ត៌មានថ្មីៗនិងការផ្តល់ជូនពិសេសៗ៖">Follow us for updates and exclusive offers:</div>
+                    <br/>
+                    <div class="social-icons">
+                        <!-- Facebook: Uses both fb:// scheme for app and regular URL as fallback -->
+                        <a href="fb://profile/khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.facebook.com/khmerhothoney'); return false;" 
+                           target="_blank" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        
+                        <!-- Instagram: Uses both instagram:// scheme for app and regular URL as fallback -->
+                        <a href="instagram://user?username=khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;" 
+                           target="_blank" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        
+                        <!-- TikTok: Uses both tiktok:// scheme for app and regular URL as fallback -->
+                        <a href="tiktok://user?username=khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.tiktok.com/@khmerhothoney'); return false;" 
+                           target="_blank" aria-label="Follow us on TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                    <br/>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="footer-section">
+                        <h3 data-en="Explore" data-km="រុករក">Explore</h3>
+                        <ul>
+                            <li><a href="index.html" data-en="Uses" data-km="ការប្រើប្រាស់">Uses</a></li>
+                            <li><a href="shop.html" data-en="Shop" data-km="ទិញ">Shop</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3 data-en="About" data-km="អំពីយើង">About</h3>
+                        <ul>
+                            <li><a href="about.html" data-en="Our Story" data-km="រឿងរបស់យើង">Our Story</a></li>
+                            <li><a href="about.html#our-process" data-en="Process" data-km="ដំណើរការ">Process</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3 data-en="Contact" data-km="ទំនាក់ទំនង">Contact</h3>
+                        <ul>
+                            <li><a href="contact.html" data-en="Message Us" data-km="ផ្ញើសារមកយើង">Message Us</a></li>
+                            <li><a href="khmerhothoney@gmail.com" data-en="khmerhothoney@gmail.com" data-km="khmerhothoney@gmail.com">khmerhothoney@gmail.com</a></li>
+                            <li><a href="tel:+85577833666" data-en="+855 77 833 666" data-km="+855 77 833 666">+855 77 833 666</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-bar">
+                    <p data-en="© 2025 Khmer Hot Honey. All rights reserved.">© 2025 Khmer Hot Honey. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function openSocialApp(link, fallbackUrl) {
+            // Store the original URL that uses the app scheme
+            const appUrl = link.getAttribute('href');
+            
+            // Set a timeout to detect if the app didn't open
+            const timeout = setTimeout(function() {
+                // If we get here, the app didn't open, so use the fallback URL in a new tab
+                window.open(fallbackUrl, '_blank');
+            }, 1000); // 1 second timeout
+            
+            // Try to open the app
+            window.location = appUrl;
+            
+            // Clear the timeout if the page is still here (user came back from the app)
+            window.addEventListener('blur', function() {
+                clearTimeout(timeout);
+            });
+            
+            // Prevent default link behavior
+            return false;
+        }
+
+        // Ensure mobile menu works - direct inline script
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    document.querySelector('.nav-links').classList.toggle('active');
+                    document.querySelector('.hamburger').classList.toggle('active');
+                    console.log('Menu toggled from inline script');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

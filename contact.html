@@ -1,0 +1,295 @@
+<!-- Updated Contact Page HTML with Firebase integration -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khmer Hot Honey | Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Updated Firebase imports using ES modules -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="sticky-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="menu-toggle">
+                    <div class="hamburger"></div>
+                </div>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Khmer Hot Honey Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link" id="nav-recipes" data-en="Uses" data-km="ការប្រើប្រាស់">Uses</a></li>
+                    <li><a href="shop.html" class="nav-link" id="nav-shop" data-en="Shop" data-km="ទិញ">Shop</a></li>
+                    <li><a href="about.html" class="nav-link" id="nav-about" data-en="About" data-km="អំពី​">About</a></li>
+                    <li><a href="contact.html" class="nav-link active" id="nav-contact" data-en="Contact" data-km="ទំនាក់ទំនង">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="language-toggle">
+                        <button id="lang-toggle" data-current="en">
+                            <img src="img/en.png" alt="English" class="lang-icon en-icon">
+                            <img src="img/kh.png" alt="Khmer" class="lang-icon kh-icon hidden">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- QR Welcome Message Container (hidden by default) -->
+        <div id="qr-welcome" class="hidden"></div>
+        
+        <!-- Contact Hero Section -->
+        <section class="hero contact-hero">
+            <div class="hero-content">
+                <h2 class="script-font" data-en="Contact Us" data-km="ទំនាក់ទំនងមកកាន់យើង">Contact Us</h2>
+                <h3 class="hero-title" data-en="GET IN TOUCH" data-km="ទាក់ទងមកយើង">GET IN TOUCH</h3>
+            </div>
+        </section>
+
+        <!-- Enhanced Contact Form Section -->
+        <section class="contact-section">
+            <div class="contact-container">
+                <!-- Left Column: Contact Information -->
+                <div class="contact-info-column">
+                    <h2 class="contact-heading" data-en="Reach Out To Us" data-km="ទំនាក់ទំនងមកកាន់យើង">Reach Out To Us</h2>
+                    <p class="contact-description" data-en="Have questions about our products? Want to share your Khmer Hot Honey recipes or experiences? Drop us a message and we'll get back to you soon!" 
+                       data-km="មានសំណួរអំពីផលិតផលរបស់យើងឬទេ? ចង់ចែករំលែករូបមន្តឬបទពិសោធន៍ទឹកឃ្មុំហឺរខ្មែររបស់អ្នក? ផ្ញើសារមកយើងហើយយើងនឹងឆ្លើយតបទៅអ្នកឆាប់ៗ!">
+                        Have questions about our products? Want to share your Khmer Hot Honey recipes or experiences? Drop us a message and we'll get back to you soon!
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <strong data-en="Email" data-km="អ៊ីមែល">Email</strong>
+                                <p><a href="mailto:khmerhothoney@gmail.com">khmerhothoney@gmail.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <strong data-en="Phone" data-km="ទូរស័ព្ទ">Phone</strong>
+                                <p><a href="tel:+85577833666">+855 77 833 666</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <strong data-en="Location" data-km="ទីតាំង">Location</strong>
+                                <p data-en="Phnom Penh, Cambodia" data-km="ភ្នំពេញ ប្រទេសកម្ពុជា">Phnom Penh, Cambodia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon-wrapper">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-info-text">
+                                <strong data-en="Business Hours" data-km="ម៉ោងធ្វើការ">Business Hours</strong>
+                                <p data-en="Monday - Sunday: 7:00AM - 7:00PM" data-km="ថ្ងៃច័ន្ទ - ថ្ងៃអាទិត្យ: ៧ព្រឹក - ៧ល្ងាច">Monday - Sunday: 7:00AM - 7:00PM</p>
+                            </div>
+                        </div>
+                        
+                        <hr/>
+                        <br/>
+                        
+                        <div class="social-purchase-buttons">
+                            <a href="fb://profile/khmerhothoney" 
+                               onclick="openSocialApp(this, 'https://www.facebook.com/khmerhothoney'); return false;" 
+                               target="_blank" class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span data-en="Contact via Facebook" data-km="ទាក់ទងតាម Facebook">Contact via Facebook</span>
+                            </a>
+                            <a href="instagram://user?username=khmerhothoney" 
+                               onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;" 
+                               target="_blank" class="social-btn instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span data-en="Contact via Instagram" data-km="ទាក់ទងតាម Instagram">Contact via Instagram</span>
+                            </a>
+                            <a href="tiktok://user?username=khmerhothoney" 
+                               onclick="openSocialApp(this, 'https://www.tiktok.com/@khmerhothoney'); return false;" 
+                               target="_blank" class="social-btn tiktok">
+                                <i class="fab fa-tiktok"></i>
+                                <span data-en="Contact via TikTok" data-km="ទាក់ទងតាម TikTok">Contact via TikTok</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Contact Form -->
+                <div class="contact-form-column">
+                    <h2 class="contact-heading" data-en="Send Us a Message" data-km="ផ្ញើសារមកកាន់យើង">Send Us a Message</h2>
+                    
+                    <!-- Firebase Form (Replaced Netlify Form) -->
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-en="Name" data-km="ឈ្មោះ">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email_phone" data-en="Email or Phone Number" data-km="អ៊ីមែល ឬ លេខទូរស័ព្ទ">Email or Phone Number</label>
+                            <input type="text" id="email_phone" name="email_phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" data-en="Subject" data-km="ប្រធានបទ">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" data-en="Message" data-km="សារ">Message</label>
+                            <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-en="Send Message" data-km="ផ្ញើសារ">Send Message</span>
+                        </button>
+                    </form>
+                    
+                    <!-- Success message (initially hidden) -->
+                    <div id="formSuccess" class="form-success hidden">
+                        <i class="fas fa-check-circle"></i>
+                        <p data-en="Thank you! Your message has been sent successfully." data-km="អរគុណ! សាររបស់អ្នកត្រូវបានផ្ញើដោយជោគជ័យ។">
+                            Thank you! Your message has been sent successfully.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bold-modern">
+        <div class="footer-content">
+            <div class="footer-main">
+                
+                <div class="footer-section">
+                    <h3 data-en="Socialize with Us" data-km="ប្រព័ន្ធផ្សព្វផ្សាយសង្គមរបស់យើង">Socialize with Us</h3>
+                    <div data-en="Follow us for updates and exclusive offers:" data-km="តាមដានយើងសម្រាប់ព័ត៌មានថ្មីៗនិងការផ្តល់ជូនពិសេសៗ៖">Follow us for updates and exclusive offers:</div>
+                    <br/>
+                    <div class="social-icons">
+                        <!-- Facebook: Uses both fb:// scheme for app and regular URL as fallback -->
+                        <a href="fb://profile/khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.facebook.com/khmerhothoney'); return false;" 
+                           target="_blank" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        
+                        <!-- Instagram: Uses both instagram:// scheme for app and regular URL as fallback -->
+                        <a href="instagram://user?username=khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;" 
+                           target="_blank" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        
+                        <!-- TikTok: Uses both tiktok:// scheme for app and regular URL as fallback -->
+                        <a href="tiktok://user?username=khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.tiktok.com/@khmerhothoney'); return false;" 
+                           target="_blank" aria-label="Follow us on TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                    <br/>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="footer-section">
+                        <h3 data-en="Explore" data-km="រុករក">Explore</h3>
+                        <ul>
+                            <li><a href="index.html" data-en="Uses" data-km="ការប្រើប្រាស់">Uses</a></li>
+                            <li><a href="shop.html" data-en="Shop" data-km="ទិញ">Shop</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3 data-en="About" data-km="អំពីយើង">About</h3>
+                        <ul>
+                            <li><a href="about.html" data-en="Our Story" data-km="រឿងរបស់យើង">Our Story</a></li>
+                            <li><a href="about.html#our-process" data-en="Process" data-km="ដំណើរការ">Process</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3 data-en="Contact" data-km="ទំនាក់ទំនង">Contact</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <a href="contact.html" data-en="Message Us" data-km="ផ្ញើសារមកយើង">
+                                    <span class="contact-icon">💬</span>
+                                    <span>Message Us</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:khmerhothoney@gmail.com" data-en="khmerhothoney@gmail.com" data-km="khmerhothoney@gmail.com">
+                                    <span class="contact-icon">✉️</span>
+                                    <span>khmerhothoney@gmail.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+85577833666" data-en="+855 77 833 666" data-km="+855 77 833 666">
+                                    <span class="contact-icon">📞</span>
+                                    <span>+855 77 833 666</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-bar">
+                    <p data-en="© 2025 Khmer Hot Honey. All rights reserved." data-km="© 2025 ទឹកឃ្មុំហឺរខ្មែរ។ រក្សាសិទ្ធិគ្រប់យ៉ាង។">© 2025 Khmer Hot Honey. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Import modules -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script src="js/language.js"></script>
+    <script type="module" src="js/analytics.js"></script>
+    <script type="module" src="js/qr-tracking.js"></script>
+    <script type="module" src="js/contact-form.js"></script>
+    <script>
+        function openSocialApp(link, fallbackUrl) {
+            const appUrl = link.getAttribute('href');
+            const timeout = setTimeout(function() {
+                window.open(fallbackUrl, '_blank');
+            }, 1000);
+            window.location = appUrl;
+            window.addEventListener('blur', function() {
+                clearTimeout(timeout);
+            });
+            return false;
+        }
+
+        // Ensure mobile menu works
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    document.querySelector('.nav-links').classList.toggle('active');
+                    document.querySelector('.hamburger').classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

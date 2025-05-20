@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khmer Hot Honey | About</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="sticky-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="menu-toggle">
+                    <div class="hamburger"></div>
+                </div>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Khmer Hot Honey Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link" id="nav-recipes" data-en="Uses" data-km="ការប្រើប្រាស់">Uses</a></li>
+                    <li><a href="shop.html" class="nav-link" id="nav-shop" data-en="Shop" data-km="ទិញ">Shop</a></li>
+                    <li><a href="about.html" class="nav-link" id="nav-about" data-en="About" data-km="អំពី​">About</a></li>
+                    <li><a href="contact.html" class="nav-link" id="nav-contact" data-en="Contact" data-km="ទំនាក់ទំនង">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="language-toggle">
+                        <button id="lang-toggle" data-current="en">
+                            <img src="img/en.png" alt="English" class="lang-icon en-icon">
+                            <img src="img/kh.png" alt="Khmer" class="lang-icon kh-icon hidden">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Hero Section -->
+        <section class="hero about-hero">
+            <div class="hero-content">
+                <h2 class="script-font" data-en="About Us" data-km="អំពី​យើង">About Us</h2>
+                <h3 class="hero-title" data-en="OUR STORY" data-km="រឿងរបស់យើង">OUR STORY</h3>
+            </div>
+        </section>
+
+        <!-- About Story Section -->
+        <section class="about-story">
+            <div class="container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2 data-en="Khmer Hot Honey Origin" data-km="រឿងរ៉ាវទឹកឃ្មុំហឺរខ្មែរ">Khmer Hot Honey Origin</h2>
+                        <p data-en="Khmer Hot Honey was born from a passion for Cambodian flavors and a desire to share the unique taste of our homeland with the world. Our journey began in a small kitchen in Phnom Penh, where we experimented with combining pure, locally-sourced honey with the perfect balance of chili heat."
+                           data-km="ទឹកឃ្មុំហឺរខ្មែរបានកើតឡើងពីចំណង់ចំណូលចិត្តចំពោះរសជាតិខ្មែរ និងបំណងចង់ចែករំលែករសជាតិពិសេសនៃមាតុភូមិរបស់យើងជាមួយពិភពលោក។ ដំណើររបស់យើងបានចាប់ផ្តើមនៅក្នុងផ្ទះបាយតូចមួយនៅភ្នំពេញ ដែលយើងបានធ្វើការពិសោធន៍ក្នុងការរួមបញ្ចូលទឹកឃ្មុំបរិសុទ្ធដែលមានប្រភពក្នុងស្រុកជាមួយនឹងតុល្យភាពល្អឥតខ្ចោះនៃម្រេចហឺរ។">Khmer Hot Honey was born from a passion for Cambodian flavors and a desire to share the unique taste of our homeland with the world. Our journey began in a small kitchen in Phnom Penh, where we experimented with combining pure, locally-sourced honey with the perfect balance of chili heat.</p>
+                        <p data-en="Today, we pride ourselves on creating an artisanal product that honors Cambodian culinary traditions while bringing a contemporary twist to your favorite dishes. Each bottle of Khmer Hot Honey is handcrafted in small batches to ensure quality and consistency."
+                           data-km="សព្វថ្ងៃនេះ យើងមានមោទនភាពក្នុងការបង្កើតផលិតផលសិប្បកម្មមួយដែលគោរពតាមប្រពៃណីម្ហូបអាហារខ្មែរ ខណៈពេលដែលនាំមកនូវការបង្វិលសម័យថ្មីទៅក្នុងម្ហូបដែលអ្នកចូលចិត្ត។ ទឹកឃ្មុំហឺរខ្មែរគ្រប់ដបត្រូវបានផលិតដោយដៃជាបាច់តូចៗដើម្បីធានាគុណភាពនិងភាពស្មើគ្នា។">Today, we pride ourselves on creating an artisanal product that honors Cambodian culinary traditions while bringing a contemporary twist to your favorite dishes. Each bottle of Khmer Hot Honey is handcrafted in small batches to ensure quality and consistency.</p>
+                    </div>
+                    <div class="story-image">
+                        <img src="img/about-khh.jpg" alt="Our Story">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="about-ingredients">
+            <div class="container">
+                <h2 data-en="Our Ingredients" data-km="គ្រឿងផ្សំរបស់យើង">Our Ingredients</h2>
+                
+                <div class="ingredients-grid">
+                    <div class="ingredient-item">
+                        <div class="hexagon-wrapper">
+                            <div class="hexagon">
+                                <img src="img/placeholder.jpg" alt="Cambodian Honey">
+                            </div>
+                        </div>
+                        <h3 data-en="Pure Cambodian Honey" data-km="ទឹកឃ្មុំខ្មែរបរិសុទ្ធ">Pure Cambodian Honey</h3>
+                        <p data-en="Sourced from local beekeepers in the pristine forests of Cambodia." 
+                           data-km="ប្រមូលពីអ្នកចិញ្ចឹមឃ្មុំក្នុងស្រុកនៅក្នុងព្រៃបរិសុទ្ធនៃប្រទេសកម្ពុជា។">Sourced from local beekeepers in the pristine forests of Cambodia.</p>
+                    </div>
+                    
+                    <div class="ingredient-item">
+                        <div class="hexagon-wrapper">
+                            <div class="hexagon">
+                                <img src="img/chilies.png" alt="Local Chilies">
+                            </div>
+                        </div>
+                        <h3 data-en="Local Chilies" data-km="ម្ទេសក្នុងស្រុក">Local Chilies</h3>
+                        <p data-en="We use a blend of traditional Cambodian chili varieties for authentic heat and flavor." 
+                           data-km="យើងប្រើល្បាយម្ទេសប្រពៃណីខ្មែរជាច្រើនប្រភេទសម្រាប់រសជាតិហឺរនិងក្លិនពិតប្រាកដ។">We use a blend of traditional Cambodian chili varieties for authentic heat and flavor.</p>
+                    </div>
+                    
+                    <!-- <div class="ingredient-item">
+                        <div class="hexagon-wrapper">
+                            <div class="hexagon">
+                                <img src="img/placeholder.jpg" alt="Kampot Pepper">
+                            </div>
+                        </div>
+                        <h3 data-en="Kampot Pepper" data-km="ម្រេចកំពត">Kampot Pepper</h3>
+                        <p data-en="Our premium varieties include world-renowned Kampot pepper for added complexity." 
+                           data-km="ប្រភេទពិសេសរបស់យើងរួមបញ្ចូលទាំងម្រេចកំពតដែលល្បីល្បាញទូទាំងពិភពលោកសម្រាប់បន្ថែមភាពស្មុគស្មាញ។">Our premium varieties include world-renowned Kampot pepper for added complexity.</p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Our Process Section -->
+        <section id="our-process" class="about-ingredients">
+            <div class="container">
+                <h2 data-en="Our Process" data-km="ដំណើរការរបស់យើង">Our Process</h2>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3 data-en="Source" data-km="ប្រភព">Source</h3>
+                        <p data-en="We carefully select raw honey from trusted local beekeepers." 
+                           data-km="យើងជ្រើសរើសយ៉ាងប្រុងប្រយ័ត្ននូវទឹកឃ្មុំឆៅពីអ្នកចិញ្ចឹមឃ្មុំក្នុងស្រុកដែលទុកចិត្តបាន។">We carefully select raw honey from trusted local beekeepers.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3 data-en="Infuse" data-km="តម្បែត">Infuse</h3>
+                        <p data-en="Our chilies are slowly infused into the honey to extract maximum flavor." 
+                           data-km="ម្ទេសរបស់យើងត្រូវបានតម្បែតយឺតៗចូលទៅក្នុងទឹកឃ្មុំដើម្បីទាញយករសជាតិអតិបរមា។">Our chilies are slowly infused into the honey to extract maximum flavor.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3 data-en="Balance" data-km="តុល្យភាព">Balance</h3>
+                        <p data-en="We perfect the balance between sweetness and heat for an unforgettable taste." 
+                           data-km="យើងធ្វើឱ្យមានតុល្យភាពឥតខ្ចោះរវាងភាពផ្អែមនិងរសជាតិហឺរសម្រាប់រសជាតិដែលមិនអាចបំភ្លេចបាន។">We perfect the balance between sweetness and heat for an unforgettable taste.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3 data-en="Bottle" data-km="ដប">Bottle</h3>
+                        <p data-en="Each bottle is filled and sealed by hand in small batches." 
+                           data-km="គ្រប់ដបត្រូវបានបំពេញនិងបិទដោយដៃជាបាច់តូចៗ។">Each bottle is filled and sealed by hand in small batches.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bold-modern">
+        <div class="footer-content">
+            <div class="footer-main">
+                <!-- <div class="footer-brand">
+                    <div class="footer-logo">
+                        <h2>Khmer <span>Hot Honey</span></h2>
+                    </div>
+                    <p class="footer-description" data-en="Authentic Cambodian-inspired hot honey made with premium ingredients and traditional recipes. Perfect for drizzling, dipping, and adding delicious heat to any meal." data-km="ទឹកឃ្មុំហឺរខ្មែរដែលមានប្រភពចម្លងពីខ្មែរ ផលិតឡើងជាមួយគ្រឿងផ្សំដ៏ល្អប្រណិត និងរូបមន្តប្រពៃណី។ ល្អឥតខ្ចោះសម្រាប់ស្រោច ជ្រលក់ និងបន្ថែមរសជាតិហឺរឆ្ងាញ់ទៅលើគ្រប់អាហារ។">
+                        Authentic Cambodian-inspired hot honey made with premium ingredients and traditional recipes. Perfect for drizzling, dipping, and adding delicious heat to any meal.
+                    </p>
+                </div> -->
+                
+                <div class="footer-section">
+                    <h3 data-en="Socialize with Us" data-km="ប្រព័ន្ធផ្សព្វផ្សាយសង្គមរបស់យើង">Socialize with Us</h3>
+                    <div data-en="Follow us for updates and exclusive offers:" data-km="តាមដានយើងសម្រាប់ព័ត៌មានថ្មីៗនិងការផ្តល់ជូនពិសេសៗ៖">Follow us for updates and exclusive offers:</div>
+                    <br/>
+                    <div class="social-icons">
+                        <!-- Facebook: Uses both fb:// scheme for app and regular URL as fallback -->
+                        <a href="fb://profile/khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.facebook.com/khmerhothoney'); return false;" 
+                           target="_blank" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        
+                        <!-- Instagram: Uses both instagram:// scheme for app and regular URL as fallback -->
+                        <a href="instagram://user?username=khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;" 
+                           target="_blank" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        
+                        <!-- TikTok: Uses both tiktok:// scheme for app and regular URL as fallback -->
+                        <a href="tiktok://user?username=khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.tiktok.com/@khmerhothoney'); return false;" 
+                           target="_blank" aria-label="Follow us on TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                    <br/>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="footer-section">
+                        <h3 data-en="Explore" data-km="រុករក">Explore</h3>
+                        <ul>
+                            <li><a href="index.html" data-en="Uses" data-km="ការប្រើប្រាស់">Uses</a></li>
+                            <li><a href="shop.html" data-en="Shop" data-km="ទិញ">Shop</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3 data-en="About" data-km="អំពីយើង">About</h3>
+                        <ul>
+                            <li><a href="about.html" data-en="Our Story" data-km="រឿងរបស់យើង">Our Story</a></li>
+                            <li><a href="about.html#our-process" data-en="Process" data-km="ដំណើរការ">Process</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3 data-en="Contact" data-km="ទំនាក់ទំនង">Contact</h3>
+                        <ul>
+                            <li><a href="contact.html" data-en="Message Us" data-km="ផ្ញើសារមកយើង">Message Us</a></li>
+                            <li><a href="khmerhothoney@gmail.com" data-en="khmerhothoney@gmail.com" data-km="khmerhothoney@gmail.com">khmerhothoney@gmail.com</a></li>
+                            <li><a href="tel:+85577833666" data-en="+855 77 833 666" data-km="+855 77 833 666">+855 77 833 666</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-bar">
+                    <p data-en="© 2025 Khmer Hot Honey. All rights reserved.">© 2025 Khmer Hot Honey. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function openSocialApp(link, fallbackUrl) {
+            // Store the original URL that uses the app scheme
+            const appUrl = link.getAttribute('href');
+            
+            // Set a timeout to detect if the app didn't open
+            const timeout = setTimeout(function() {
+                // If we get here, the app didn't open, so use the fallback URL in a new tab
+                window.open(fallbackUrl, '_blank');
+            }, 1000); // 1 second timeout
+            
+            // Try to open the app
+            window.location = appUrl;
+            
+            // Clear the timeout if the page is still here (user came back from the app)
+            window.addEventListener('blur', function() {
+                clearTimeout(timeout);
+            });
+            
+            // Prevent default link behavior
+            return false;
+        }
+
+        // Ensure mobile menu works - direct inline script
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    document.querySelector('.nav-links').classList.toggle('active');
+                    document.querySelector('.hamburger').classList.toggle('active');
+                    console.log('Menu toggled from inline script');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

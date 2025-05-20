@@ -1,0 +1,1049 @@
+<!-- Index page with QR code tracking -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khmer Hot Honey | Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Updated Firebase imports using ES modules -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+</head>
+<body>
+    <!-- QR Welcome Message Container (hidden by default) -->
+    <div id="qr-welcome" class="hidden"></div>
+    
+    <!-- Navigation Bar -->
+    <header class="sticky-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="menu-toggle">
+                    <div class="hamburger"></div>
+                </div>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Khmer Hot Honey Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active" id="nav-recipes" data-en="Uses" data-km="ការប្រើប្រាស់">Uses</a></li>
+                    <li><a href="shop.html" class="nav-link" id="nav-shop" data-en="Shop" data-km="ទិញ">Shop</a></li>
+                    <li><a href="about.html" class="nav-link" id="nav-about" data-en="About" data-km="អំពី​">About</a></li>
+                    <li><a href="contact.html" class="nav-link" id="nav-contact" data-en="Contact" data-km="ទំនាក់ទំនង">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="language-toggle">
+                        <button id="lang-toggle" data-current="en">
+                            <img src="img/en.png" alt="English" class="lang-icon en-icon">
+                            <img src="img/kh.png" alt="Khmer" class="lang-icon kh-icon hidden">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="script-font" data-en="Drizzle, Dip, Delicious" data-km="ចាក់ពីលើ, ជ្រលក់, រសជាតិឆ្ងាញ់">Drizzle, Dip, Delicious</h2>
+                <h3 class="hero-title" data-en="FOR EVERY MEAL" data-km="សម្រាប់គ្រប់អាហារ">FOR EVERY MEAL</h3>
+            </div>
+        </section>
+
+        <!-- Category Filter -->
+        <section class="category-filter">
+            <div class="filter-container">
+                <div class="category-item active" data-category="all">
+                    <div class="hexagon-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <span data-en="ALL" data-km="ទាំងអស់">ALL</span>
+                </div>
+                <div class="category-item" data-category="meat">
+                    <div class="hexagon-icon">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <span data-en="MEAT" data-km="សាច់">MEAT</span>
+                </div>
+                <div class="category-item" data-category="fish">
+                    <div class="hexagon-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <span data-en="FISH" data-km="ត្រី">FISH</span>
+                </div>
+                <div class="category-item" data-category="breakfast">
+                    <div class="hexagon-icon">
+                        <i class="fas fa-egg"></i>
+                    </div>
+                    <span data-en="BREAKFAST" data-km="អាហារពេលព្រឹក">BREAKFAST</span>
+                </div>
+                <div class="category-item" data-category="fast-food">
+                    <div class="hexagon-icon">
+                        <i class="fas fa-pizza-slice"></i>
+                    </div>
+                    <span data-en="FAST FOOD" data-km="អាហាររហ័ស">FAST FOOD</span>
+                </div>
+                <div class="category-item" data-category="vegetables">
+                    <div class="hexagon-icon">
+                        <i class="fas fa-carrot"></i>
+                    </div>
+                    <span data-en="VEGETABLES" data-km="បន្លែ">VEGETABLES</span>
+                </div>
+                <div class="category-item" data-category="desserts">
+                    <div class="hexagon-icon">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <span data-en="DESSERTS" data-km="បង្អែម">DESSERTS</span>
+                </div>
+                <div class="category-item" data-category="dipping-board">
+                    <div class="hexagon-icon">
+                        <i class="fas fa-cheese"></i>
+                    </div>
+                    <span data-en="DRIZZLE & DIP" data-km="សម្រាប់ជ្រលក់">DRIZZLE & DIP</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recipe Cards -->
+        <section class="recipe-grid">
+            <!-- MEAT CATEGORY -->
+            <div class="recipe-card" data-category="meat">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Glazed Ribs">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HOT HONEY GLAZED RIBS" data-km="ឆ្អឹងជំនីលាបទឹកឃ្មុំហឺរ">HOT HONEY GLAZED RIBS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Meat" data-km="សាច់">Meat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="meat">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Spicy Honey Steak">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY STEAK" data-km="ស្តេកសាច់គោជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY STEAK</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Meat" data-km="សាច់">Meat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="meat">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Bacon Drizzle">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY DRIZZLED BACON" data-km="សាច់ជ្រូកអាំងជាមួយទឹកឃ្មុំហឺរ">HONEY DRIZZLED BACON</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Meat" data-km="សាច់">Meat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="meat">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Pulled Pork Sandwich">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HOT HONEY PULLED PORK SANDWICH" data-km="សាំងវិចសាច់ជ្រូកហឺរជាមួយទឹកឃ្មុំ">HOT HONEY PULLED PORK SANDWICH</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Meat" data-km="សាច់">Meat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="meat">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Honey BBQ Wings">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY BBQ WINGS" data-km="ស្លាបមាន់បាបេគ្យូជាមួយទឹកឃ្មុំហឺរ">HONEY BBQ WINGS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Meat" data-km="សាច់">Meat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="meat">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Meatballs">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY MEATBALLS" data-km="បាល់សាច់ជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY MEATBALLS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Meat" data-km="សាច់">Meat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="meat">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Lamb Chops">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY GLAZED LAMB CHOPS" data-km="ឆ្អឹងជំនីកូនចៀមលាបទឹកឃ្មុំហឺរ">HONEY GLAZED LAMB CHOPS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Meat" data-km="សាច់">Meat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="meat">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Grilled Kebabs">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY GRILLED KEBABS" data-km="សាច់អាំងដោតឈើជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY GRILLED KEBABS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Meat" data-km="សាច់">Meat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FISH CATEGORY -->
+            <div class="recipe-card" data-category="fish">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Honey Glazed Salmon">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY GLAZED SALMON" data-km="ត្រីសាល់ម៉ុនលាបទឹកឃ្មុំហឺរ">HONEY GLAZED SALMON</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fish" data-km="ត្រី">Fish</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fish">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Spicy Shrimp">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY SHRIMP" data-km="បង្គាជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY SHRIMP</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fish" data-km="ត្រី">Fish</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fish">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Fish Tacos">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY DRIZZLED FISH TACOS" data-km="តាកូត្រីស្រោចទឹកឃ្មុំហឺរ">HONEY DRIZZLED FISH TACOS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fish" data-km="ត្រី">Fish</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fish">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Tuna Poke Bowl">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY TUNA POKE BOWL" data-km="បាយចានត្រីធូណាជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY TUNA POKE BOWL</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fish" data-km="ត្រី">Fish</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fish">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Grilled Fish">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY GLAZED GRILLED FISH" data-km="ត្រីអាំងលាបទឹកឃ្មុំហឺរ">HONEY GLAZED GRILLED FISH</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fish" data-km="ត្រី">Fish</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fish">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Fried Calamari">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY FRIED CALAMARI" data-km="ម្ហូបមឹកបំពងជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY FRIED CALAMARI</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fish" data-km="ត្រី">Fish</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fish">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Sushi Drizzle">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HOT HONEY SUSHI DRIZZLE" data-km="ស៊ូស៊ីស្រោចទឹកឃ្មុំហឺរ">HOT HONEY SUSHI DRIZZLE</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fish" data-km="ត្រី">Fish</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fish">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Ceviche">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY CEVICHE" data-km="សេវីឆេជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY CEVICHE</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fish" data-km="ត្រី">Fish</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BREAKFAST CATEGORY -->
+            <div class="recipe-card" data-category="breakfast">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Honey Butter Toast">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY BUTTER TOAST" data-km="នំបុ័ងដុតប៊ឺរទឹកឃ្មុំហឺរ">HONEY BUTTER TOAST</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Breakfast" data-km="អាហារពេលព្រឹក">Breakfast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="breakfast">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Spicy Breakfast Sandwich">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY BREAKFAST SANDWICH" data-km="សាំងវិចពេលព្រឹកហឺរ">SPICY BREAKFAST SANDWICH</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Breakfast" data-km="អាហារពេលព្រឹក">Breakfast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="breakfast">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Waffles">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HOT HONEY WAFFLES" data-km="វ៉ាហ្វលជាមួយទឹកឃ្មុំហឺរ">HOT HONEY WAFFLES</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Breakfast" data-km="អាហារពេលព្រឹក">Breakfast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="breakfast">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Pancakes">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY PANCAKES" data-km="បាំងខេកជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY PANCAKES</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Breakfast" data-km="អាហារពេលព្រឹក">Breakfast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="breakfast">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Honey Yogurt Parfait">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY YOGURT PARFAIT" data-km="យ៉ាអួរជាមួយទឹកឃ្មុំហឺរ">HONEY YOGURT PARFAIT</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Breakfast" data-km="អាហារពេលព្រឹក">Breakfast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="breakfast">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Breakfast Burrito">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY BREAKFAST BURRITO" data-km="បូរីតូពេលព្រឹកជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY BREAKFAST BURRITO</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Breakfast" data-km="អាហារពេលព្រឹក">Breakfast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="breakfast">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="French Toast">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HOT HONEY FRENCH TOAST" data-km="នំបុ័ងបារាំងអាំងជាមួយទឹកឃ្មុំហឺរ">HOT HONEY FRENCH TOAST</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Breakfast" data-km="អាហារពេលព្រឹក">Breakfast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="breakfast">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Avocado Toast">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY AVOCADO TOAST" data-km="នំបុ័ងអាវ៉ូកាដូជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY AVOCADO TOAST</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Breakfast" data-km="អាហារពេលព្រឹក">Breakfast</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAST FOOD CATEGORY -->
+            <div class="recipe-card" data-category="fast-food">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Pizza Drizzle">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HOT HONEY PIZZA DRIZZLE" data-km="ភីហ្សាស្រោចទឹកឃ្មុំហឺរ">HOT HONEY PIZZA DRIZZLE</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fast Food" data-km="អាហាររហ័ស">Fast Food</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fast-food">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Spicy Fries">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY FRIES" data-km="ដំឡូងបារាំងហឺរជាមួយទឹកឃ្មុំ">SPICY HONEY FRIES</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fast Food" data-km="អាហាររហ័ស">Fast Food</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fast-food">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Chicken Sandwich">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY CHICKEN SANDWICH" data-km="សាំងវិចសាច់មាន់ជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY CHICKEN SANDWICH</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fast Food" data-km="អាហាររហ័ស">Fast Food</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fast-food">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Onion Rings">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HOT HONEY ONION RINGS" data-km="ខាត់ណាដំឡូងបំពងជាមួយទឹកឃ្មុំហឺរ">HOT HONEY ONION RINGS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fast Food" data-km="អាហាររហ័ស">Fast Food</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fast-food">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Chicken Nuggets">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY DIPPED CHICKEN NUGGETS" data-km="ដុំសាច់មាន់ជ្រលក់ទឹកឃ្មុំហឺរ">HONEY DIPPED CHICKEN NUGGETS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fast Food" data-km="អាហាររហ័ស">Fast Food</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fast-food">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Loaded Nachos">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY LOADED NACHOS" data-km="ណាឆូសជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY LOADED NACHOS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fast Food" data-km="អាហាររហ័ស">Fast Food</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fast-food">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Mozzarella Sticks">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HOT HONEY MOZZARELLA STICKS" data-km="ឈីសម៉ូហ្សារេឡាបំពងជាមួយទឹកឃ្មុំហឺរ">HOT HONEY MOZZARELLA STICKS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fast Food" data-km="អាហាររហ័ស">Fast Food</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="fast-food">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Burgers">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY BURGER" data-km="ប៊ឺហ្គឺជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY BURGER</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Fast Food" data-km="អាហាររហ័ស">Fast Food</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VEGETABLES CATEGORY -->
+            <div class="recipe-card" data-category="vegetables">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Roasted Brussels Sprouts">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY ROASTED BRUSSELS SPROUTS" data-km="ខាត់ណាប្រ៊ូសែលអាំងជាមួយទឹកឃ្មុំ">HONEY ROASTED BRUSSELS SPROUTS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Vegetables" data-km="បន្លែ">Vegetables</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="vegetables">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Sweet Potato Fries">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SWEET POTATO FRIES WITH HOT HONEY" data-km="ដំឡូងជ្វាបំពងជាមួយទឹកឃ្មុំហឺរ">SWEET POTATO FRIES WITH HOT HONEY</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Vegetables" data-km="បន្លែ">Vegetables</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="vegetables">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Grilled Corn">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY GRILLED CORN" data-km="ពោតអាំងជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY GRILLED CORN</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Vegetables" data-km="បន្លែ">Vegetables</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="vegetables">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Honey Glazed Carrots">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY GLAZED CARROTS" data-km="ការ៉ុតលាបទឹកឃ្មុំហឺរ">HONEY GLAZED CARROTS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Vegetables" data-km="បន្លែ">Vegetables</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="vegetables">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Spicy Cauliflower">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY CAULIFLOWER" data-km="ផ្កាខាត់ណាជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY CAULIFLOWER</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Vegetables" data-km="បន្លែ">Vegetables</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="vegetables">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Roasted Butternut Squash">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY ROASTED BUTTERNUT SQUASH" data-km="ល្ពៅបាទឺណាតអាំងជាមួយទឹកឃ្មុំ">HONEY ROASTED BUTTERNUT SQUASH</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Vegetables" data-km="បន្លែ">Vegetables</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="vegetables">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Vegetable Stir-fry">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY VEGETABLE STIR-FRY" data-km="បន្លែឆាជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY VEGETABLE STIR-FRY</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Vegetables" data-km="បន្លែ">Vegetables</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="vegetables">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Avocado Halves">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY DRIZZLED AVOCADO HALVES" data-km="អាវ៉ូកាដូកាត់ពាក់កណ្តាលស្រោចទឹកឃ្មុំហឺរ">HONEY DRIZZLED AVOCADO HALVES</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Vegetables" data-km="បន្លែ">Vegetables</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DESSERTS CATEGORY -->
+            <div class="recipe-card" data-category="desserts">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Ice Cream Drizzle">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SWEET & SPICY ICE CREAM DRIZZLE" data-km="ការេមស្រោចទឹកឃ្មុំផ្អែមនិងហឺរ">SWEET & SPICY ICE CREAM DRIZZLE</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Desserts" data-km="បង្អែម">Desserts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="desserts">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Cheesecake Topping">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY CHEESECAKE TOPPING" data-km="នំឈីសខេកជាមួយទឹកឃ្មុំហឺរ">SPICY CHEESECAKE TOPPING</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Desserts" data-km="បង្អែម">Desserts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="desserts">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Honey Fruit Tart">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HOT HONEY FRUIT TART" data-km="តាតផ្លែឈើជាមួយទឹកឃ្មុំហឺរ">HOT HONEY FRUIT TART</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Desserts" data-km="បង្អែម">Desserts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="desserts">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Sweet & Spicy Brownies">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SWEET & SPICY BROWNIES" data-km="នំប្រោនីផ្អែមនិងហឺរ">SWEET & SPICY BROWNIES</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Desserts" data-km="បង្អែម">Desserts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="desserts">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Vanilla Pudding">
+                    <div class="recipe-overlay">
+                        <h3 data-en="VANILLA PUDDING WITH HOT HONEY" data-km="ពូឌីងវ៉ានីឡាជាមួយទឹកឃ្មុំហឺរ">VANILLA PUDDING WITH HOT HONEY</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Desserts" data-km="បង្អែម">Desserts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="desserts">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Baked Apples">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY BAKED APPLES" data-km="ផ្លែប៉ោមអាំងជាមួយទឹកឃ្មុំហឺរ">HONEY BAKED APPLES</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Desserts" data-km="បង្អែម">Desserts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="desserts">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Donuts">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY GLAZED DONUTS" data-km="នំដូណាត់លាបទឹកឃ្មុំហឺរ">SPICY HONEY GLAZED DONUTS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Desserts" data-km="បង្អែម">Desserts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="desserts">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Honey Cake">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY CAKE" data-km="នំខេកទឹកឃ្មុំហឺរ">SPICY HONEY CAKE</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Desserts" data-km="បង្អែម">Desserts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIPPING BOARD CATEGORY -->
+            <div class="recipe-card" data-category="dipping-board">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Cheese Plate">
+                    <div class="recipe-overlay">
+                        <h3 data-en="HONEY DRIZZLED CHEESE PLATE" data-km="ចានឈីសស្រោចទឹកឃ្មុំ">HONEY DRIZZLED CHEESE PLATE</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Drizzle & Dip" data-km="សម្រាប់ជ្រលក់">Dipping Board</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="dipping-board">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Fried Cheese Curds">
+                    <div class="recipe-overlay">
+                        <h3 data-en="SPICY HONEY FRIED CHEESE CURDS" data-km="ដុំឈីសបំពងជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY FRIED CHEESE CURDS</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Drizzle & Dip" data-km="សម្រាប់ជ្រលក់">Dipping Board</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="dipping-board">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Artisan Bread">
+                    <div class="recipe-overlay">
+                        <h3 data-en="ARTISAN BREAD WITH HOT HONEY" data-km="នំបុ័ងសិប្បកម្មជាមួយទឹកឃ្មុំហឺរ">ARTISAN BREAD WITH HOT HONEY</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Drizzle & Dip" data-km="សម្រាប់ជ្រលក់">Dipping Board</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="dipping-board">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Pretzels">
+                    <div class="recipe-overlay">
+                        <h3 data-en="PRETZELS WITH SPICY HONEY DIP" data-km="នំប្រេតហ្សេលជាមួយទឹកជ្រលក់ឃ្មុំហឺរ">PRETZELS WITH SPICY HONEY DIP</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Drizzle & Dip" data-km="សម្រាប់ជ្រលក់">Dipping Board</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="dipping-board">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Crackers">
+                    <div class="recipe-overlay">
+                        <h3 data-en="CRACKERS WITH HOT HONEY" data-km="នំក្រាគឺជាមួយទឹកឃ្មុំហឺរ">CRACKERS WITH HOT HONEY</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Drizzle & Dip" data-km="សម្រាប់ជ្រលក់">Dipping Board</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="dipping-board">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Fresh Fruit">
+                    <div class="recipe-overlay">
+                        <h3 data-en="FRESH FRUIT WITH SPICY HONEY" data-km="ផ្លែឈើស្រស់ជាមួយទឹកឃ្មុំហឺរ">FRESH FRUIT WITH SPICY HONEY</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Drizzle & Dip" data-km="សម្រាប់ជ្រលក់">Dipping Board</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="dipping-board">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Charcuterie">
+                    <div class="recipe-overlay">
+                        <h3 data-en="CHARCUTERIE WITH HOT HONEY DRIZZLE" data-km="ចាឃូធើរីជាមួយទឹកឃ្មុំហឺរ">CHARCUTERIE WITH HOT HONEY DRIZZLE</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Drizzle & Dip" data-km="សម្រាប់ជ្រលក់">Dipping Board</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="dipping-board">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Chicken Tenders">
+                    <div class="recipe-overlay">
+                        <h3 data-en="CHICKEN TENDERS WITH SPICY HONEY DIP" data-km="ឆ្អឹងទន់មាន់ជាមួយទឹកជ្រលក់ឃ្មុំហឺរ">CHICKEN TENDERS WITH SPICY HONEY DIP</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Drizzle & Dip" data-km="សម្រាប់ជ្រលក់">Dipping Board</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card" data-category="dipping-board">
+                <div class="recipe-image">
+                    <img src="img/placeholder.jpg" alt="Tortilla Chips">
+                    <div class="recipe-overlay">
+                        <h3 data-en="TORTILLA CHIPS WITH HOT HONEY" data-km="ស្នូតទីយ៉ាជាមួយទឹកឃ្មុំហឺរ">TORTILLA CHIPS WITH HOT HONEY</h3>
+                        <div class="recipe-divider">
+                            <div class="recipe-category">
+                                <span data-en="Drizzle & Dip" data-km="សម្រាប់ជ្រលក់">Dipping Board</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="pagination-container">
+            <div class="pagination">
+                <button class="page-btn prev-btn" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="page-numbers">
+                    <span class="page-number active" data-page="1">1</span>
+                    <!-- Page numbers will be dynamically added here -->
+                </div>
+                <button class="page-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bold-modern">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h3 data-en="Socialize with Us" data-km="ប្រព័ន្ធផ្សព្វផ្សាយសង្គមរបស់យើង">Socialize with Us</h3>
+                    <div data-en="Follow us for updates and exclusive offers:" data-km="តាមដានយើងសម្រាប់ព័ត៌មានថ្មីៗនិងការផ្តល់ជូនពិសេសៗ៖">Follow us for updates and exclusive offers:</div>
+                    <br/>
+                    <div class="social-icons">
+                        <!-- Facebook: Uses both fb:// scheme for app and regular URL as fallback -->
+                        <a href="fb://profile/khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.facebook.com/khmerhothoney'); return false;" 
+                           target="_blank" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        
+                        <!-- Instagram: Uses both instagram:// scheme for app and regular URL as fallback -->
+                        <a href="instagram://user?username=khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;" 
+                           target="_blank" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        
+                        <!-- TikTok: Uses both tiktok:// scheme for app and regular URL as fallback -->
+                        <a href="tiktok://user?username=khmerhothoney" 
+                           onclick="openSocialApp(this, 'https://www.tiktok.com/@khmerhothoney'); return false;" 
+                           target="_blank" aria-label="Follow us on TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                    <br/>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="footer-section">
+                        <h3 data-en="Explore" data-km="រុករក">Explore</h3>
+                        <ul>
+                            <li><a href="index.html" data-en="Uses" data-km="ការប្រើប្រាស់">Uses</a></li>
+                            <li><a href="shop.html" data-en="Shop" data-km="ទិញ">Shop</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3 data-en="About" data-km="អំពីយើង">About</h3>
+                        <ul>
+                            <li><a href="about.html" data-en="Our Story" data-km="រឿងរបស់យើង">Our Story</a></li>
+                            <li><a href="about.html#our-process" data-en="Process" data-km="ដំណើរការ">Process</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3 data-en="Contact" data-km="ទំនាក់ទំនង">Contact</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <a href="contact.html" data-en="Message Us" data-km="ផ្ញើសារមកយើង">
+                                    <span class="contact-icon">💬</span>
+                                    <span>Message Us</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:khmerhothoney@gmail.com" data-en="khmerhothoney@gmail.com" data-km="khmerhothoney@gmail.com">
+                                    <span class="contact-icon">✉️</span>
+                                    <span>khmerhothoney@gmail.com</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+85577833666" data-en="+855 77 833 666" data-km="+855 77 833 666">
+                                    <span class="contact-icon">📞</span>
+                                    <span>+855 77 833 666</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-bar">
+                    <p data-en="© 2025 Khmer Hot Honey. All rights reserved." data-km="© 2025 ទឹកឃ្មុំហឺរខ្មែរ។ រក្សាសិទ្ធិគ្រប់យ៉ាង។">© 2025 Khmer Hot Honey. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Import modules -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script src="js/language.js"></script>
+    <script type="module" src="js/analytics.js"></script>
+    <script type="module" src="js/qr-tracking.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script>
+        function openSocialApp(link, fallbackUrl) {
+            const appUrl = link.getAttribute('href');
+            const timeout = setTimeout(function() {
+                window.open(fallbackUrl, '_blank');
+            }, 1000);
+            window.location = appUrl;
+            window.addEventListener('blur', function() {
+                clearTimeout(timeout);
+            });
+            return false;
+        }
+
+        // Ensure mobile menu works
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    document.querySelector('.nav-links').classList.toggle('active');
+                    document.querySelector('.hamburger').classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

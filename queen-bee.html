@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khmer Hot Honey | QR Code Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/qr-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="sticky-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Khmer Hot Honey Logo">
+                    </a>
+                </div>
+                <h1>Admin Tools</h1>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="qr-generator-container">
+            <h2 class="qr-generator-title">Khmer Hot Honey QR Code Generator</h2>
+            <p class="qr-intro">Generate QR codes for your bottles. When scanned, these QR codes will direct customers to your website and allow you to track which bottles are being scanned.</p>
+            
+            <form id="qr-generator-form" class="qr-generator-form">
+                <div class="form-group">
+                    <label for="location-prefix">Location Prefix:</label>
+                    <input type="text" id="location-prefix" value="PizzaHut" placeholder="e.g. PizzaHut, LuckySM" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location-suffix">Location Suffix:</label>
+                    <input type="text" id="location-suffix" value="BKK1" placeholder="e.g. BKK1, ToulKork" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="qr-count">Number of QR Codes:</label>
+                    <input type="number" id="qr-count" min="1" max="100" value="10" required>
+                </div>
+                
+                <button type="submit" class="btn-generate">Generate QR Codes</button>
+            </form>
+            
+            <div id="qr-output"></div>
+            
+            <div class="download-all-container" style="text-align: center; margin-top: 30px;">
+                <button id="download-all-btn" class="btn-download-all">Download All QR Codes</button>
+            </div>
+            
+            <div class="qr-instructions">
+                <h3>Instructions:</h3>
+                <ol>
+                    <li>Enter a location prefix (e.g., PizzaHut, LuckySM, OhMyBurger)</li>
+                    <li>Enter a location suffix (e.g., BKK1, ToulKork, Siem Reap)</li>
+                    <li>Choose how many QR codes you want to generate for this location (max 100 per batch)</li>
+                    <li>Click "Generate QR Codes" to create your codes</li>
+                    <li>Download individual codes or click "Download All" to get the entire batch</li>
+                    <li>Print these codes and attach them to the bottles delivered to each location</li>
+                    <li>When a customer scans a code, they'll be taken to your website and you'll be able to track which location the bottle was from</li>
+                </ol>
+                
+                <h3>URL Format:</h3>
+                <p id="url-format-info">
+                    Each QR code points to our website with an encoded tracking parameter. When scanned, 
+                    the website will track the location information without explicitly showing it to customers.
+                </p>
+            
+                <h3>Tracking:</h3>
+                <p>When a customer scans a QR code, the following information is logged in your Firebase database:</p>
+                <ul>
+                    <li>Location code (e.g., PizzaHutBKK1-1)</li>
+                    <li>Scan date and time</li>
+                    <li>Device information</li>
+                    <li>User's language preference</li>
+                    <li>Screen size</li>
+                </ul>
+                <p>This data can be viewed in your Firebase Analytics dashboard.</p>
+            </div>
+        </div>
+    </main>
+    <!-- Load QRCode.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <!-- Inline script to verify QRCode is loaded -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof QRCode === 'undefined') {
+                console.error('QRCode library not loaded!');
+                alert('QR Code library could not be loaded. Please check your internet connection and try again.');
+            } else {
+                console.log('QRCode library loaded successfully!');
+            }
+        });
+    </script>
+    
+    <!-- Your QR generator script -->
+    <script src="js/qr-generator.js"></script>
+</body>
+</html>
