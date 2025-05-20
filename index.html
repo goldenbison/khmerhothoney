@@ -940,22 +940,22 @@
                     <div data-en="Follow us for updates and exclusive offers:" data-km="តាមដានយើងសម្រាប់ព័ត៌មានថ្មីៗនិងការផ្តល់ជូនពិសេសៗ៖">Follow us for updates and exclusive offers:</div>
                     <br/>
                     <div class="social-icons">
-                        <!-- Facebook: Uses both fb:// scheme for app and regular URL as fallback -->
-                        <a href="fb://profile/khmerhothoney" 
+                        <!-- Facebook: Updated URL schemes for better mobile compatibility -->
+                        <a href="fb://page/khmerhothoney" 
                            onclick="openSocialApp(this, 'https://www.facebook.com/khmerhothoney'); return false;" 
                            target="_blank" aria-label="Follow us on Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         
-                        <!-- Instagram: Uses both instagram:// scheme for app and regular URL as fallback -->
+                        <!-- Instagram: This seems to be working fine -->
                         <a href="instagram://user?username=khmerhothoney" 
                            onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;" 
                            target="_blank" aria-label="Follow us on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         
-                        <!-- TikTok: Uses both tiktok:// scheme for app and regular URL as fallback -->
-                        <a href="tiktok://user?username=khmerhothoney" 
+                        <!-- TikTok: Updated URL schemes for better mobile compatibility -->
+                        <a href="tiktok://user/khmerhothoney" 
                            onclick="openSocialApp(this, 'https://www.tiktok.com/@khmerhothoney'); return false;" 
                            target="_blank" aria-label="Follow us on TikTok">
                             <i class="fab fa-tiktok"></i>
@@ -1008,15 +1008,70 @@
     <script type="module" src="js/main.js"></script>
     <script>
         function openSocialApp(link, fallbackUrl) {
+            // Get the app URL and fallback URL
             const appUrl = link.getAttribute('href');
-            const timeout = setTimeout(function() {
-                window.open(fallbackUrl, '_blank');
-            }, 1000);
-            window.location = appUrl;
-            window.addEventListener('blur', function() {
-                clearTimeout(timeout);
-            });
+            const fbUrl = fallbackUrl;
+            
+            // Detect platform
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            const isAndroid = /android/i.test(navigator.userAgent);
+            
+            // Check if this is Facebook link
+            const isFacebookLink = appUrl.includes('fb://');
+            // Check if this is TikTok link
+            const isTikTokLink = appUrl.includes('tiktok://');
+            
+            // Special handling for Facebook on iOS
+            if (isFacebookLink && isIOS) {
+                // For iOS, use a different URL scheme
+                const iosAppUrl = appUrl.replace('fb://page/', 'fb://profile/');
+                tryOpenApp(iosAppUrl, fbUrl);
+                return false;
+            }
+            
+            // Special handling for TikTok on both platforms
+            if (isTikTokLink) {
+                if (isIOS) {
+                    // iOS TikTok app URL
+                    const iosTikTokUrl = 'tiktok://user/khmerhothoney';
+                    tryOpenApp(iosTikTokUrl, fallbackUrl);
+                } else if (isAndroid) {
+                    // Android TikTok app URL
+                    const androidTikTokUrl = 'https://www.tiktok.com/@khmerhothoney';
+                    window.location = androidTikTokUrl;
+                } else {
+                    // Fallback to web
+                    window.open(fallbackUrl, '_blank');
+                }
+                return false;
+            }
+            
+            // Standard handling for other cases
+            tryOpenApp(appUrl, fallbackUrl);
             return false;
+            
+            // Helper function to try opening the app
+            function tryOpenApp(appUrl, webUrl) {
+                // Set a timeout to open the fallback URL if the app doesn't open
+                const timeout = setTimeout(function() {
+                    window.open(webUrl, '_blank');
+                }, 1500); // Increased timeout for slower devices
+                
+                // Try to open the app
+                window.location = appUrl;
+                
+                // Clear the timeout if the page is hidden (user likely went to the app)
+                document.addEventListener('visibilitychange', function() {
+                    if (document.hidden) {
+                        clearTimeout(timeout);
+                    }
+                });
+                
+                // Also check for window blur event (older method)
+                window.addEventListener('blur', function() {
+                    clearTimeout(timeout);
+                });
+            }
         }
 
         // Ensure mobile menu works
