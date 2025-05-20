@@ -940,21 +940,20 @@
                     <div data-en="Follow us for updates and exclusive offers:" data-km="តាមដានយើងសម្រាប់ព័ត៌មានថ្មីៗនិងការផ្តល់ជូនពិសេសៗ៖">Follow us for updates and exclusive offers:</div>
                     <br/>
                     <div class="social-icons">
-                        <!-- Facebook: Using fb://page/ with the numerical Page ID is more reliable for pages -->
-                        <a href="fb://page/669737789550466"
-                           onclick="openSocialApp(this, 'https://www.facebook.com/khmerhothoney'); return false;"
+                        <!-- Facebook: Reverting to standard web URL. Mobile browsers often prompt to open in app anyway -->
+                        <a href="https://www.facebook.com/khmerhothoney"
                            target="_blank" aria-label="Follow us on Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
 
-                        <!-- Instagram: This scheme and the fallback logic usually work well -->
+                        <!-- Instagram: Keeping current setup as it works -->
                         <a href="instagram://user?username=khmerhothoney"
                            onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;"
                            target="_blank" aria-label="Follow us on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
 
-                        <!-- TikTok: App schemes can be unreliable. Using the standard web URL and letting the browser handle the "open in app" prompt is often more consistent. Removed the onclick as it's not needed for a standard web URL -->
+                        <!-- TikTok: Using standard web URL, relying on browser/OS handling -->
                         <a href="https://www.tiktok.com/@khmerhothoney"
                            target="_blank" aria-label="Follow us on TikTok">
                             <i class="fab fa-tiktok"></i>
@@ -1005,7 +1004,7 @@
     <script type="module" src="js/qr-tracking.js"></script>
     <script type="module" src="js/main.js"></script>
     <script>
-        // openSocialApp function is still needed for Facebook and Instagram (with app schemes)
+        // openSocialApp function is now only needed for Instagram
         function openSocialApp(link, fallbackUrl) {
             const appUrl = link.getAttribute('href');
             const timeout = setTimeout(function() {
@@ -1036,15 +1035,16 @@
 
             // Added smooth scrolling for footer #our-process link
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    // Only handle clicks on the current page
-                    if (this.pathname === window.location.pathname) {
-                         e.preventDefault();
-                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                 // Check if the anchor link is pointing to an ID on the current page
+                 const targetId = anchor.getAttribute('href');
+                 if (targetId.length > 1 && targetId.startsWith('#') && document.getElementById(targetId.substring(1))) {
+                     anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        document.querySelector(targetId).scrollIntoView({
                             behavior: 'smooth'
                         });
-                    }
-                });
+                    });
+                 }
             });
         });
     </script>
