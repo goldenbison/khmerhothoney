@@ -11,6 +11,11 @@
     <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+    <!-- Add Firebase Storage SDK -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
+    
+    <!-- Assuming firebase-config.js is a module -->
+    <script type="module" src="js/firebase-config.js"></script>
 </head>
 <body>
     <!-- QR Welcome Message Container (hidden by default) -->
@@ -25,7 +30,7 @@
                 </div>
                 <div class="logo">
                     <a href="index.html">
-                        <img src="img/logo.png" alt="Khmer Hot Honey Logo">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/logo.png?alt=media&token=b596c552-27a3-4f9e-abf2-b5911b9d646d" alt="Khmer Hot Honey Logo">
                     </a>
                 </div>
                 <ul class="nav-links">
@@ -37,8 +42,8 @@
                 <div class="nav-icons">
                     <div class="language-toggle">
                         <button id="lang-toggle" data-current="en">
-                            <img src="img/en.png" alt="English" class="lang-icon en-icon">
-                            <img src="img/kh.png" alt="Khmer" class="lang-icon kh-icon hidden">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/en.png?alt=media&token=bddedf5c-3f08-41dc-9690-78f3fb1c6563" alt="English" class="lang-icon en-icon">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/kh.png?alt=media&token=3916638e-f592-438c-8202-90dad23aea94" alt="Khmer" class="lang-icon kh-icon hidden">
                         </button>
                     </div>
                 </div>
@@ -114,7 +119,7 @@
             <!-- MEAT CATEGORY -->
             <div class="recipe-card" data-category="meat">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Glazed Ribs">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Glazed Ribs">
                     <div class="recipe-overlay">
                         <h3 data-en="HOT HONEY GLAZED RIBS" data-km="ឆ្អឹងជំនីលាបទឹកឃ្មុំហឺរ">HOT HONEY GLAZED RIBS</h3>
                         <div class="recipe-divider">
@@ -128,7 +133,7 @@
 
             <div class="recipe-card" data-category="meat">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Spicy Honey Steak">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Spicy Honey Steak">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY STEAK" data-km="ស្តេកសាច់គោជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY STEAK</h3>
                         <div class="recipe-divider">
@@ -142,7 +147,7 @@
 
             <div class="recipe-card" data-category="meat">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Bacon Drizzle">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Bacon Drizzle">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY DRIZZLED BACON" data-km="សាច់ជ្រូកអាំងជាមួយទឹកឃ្មុំហឺរ">HONEY DRIZZLED BACON</h3>
                         <div class="recipe-divider">
@@ -156,7 +161,7 @@
 
             <div class="recipe-card" data-category="meat">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Pulled Pork Sandwich">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Pulled Pork Sandwich">
                     <div class="recipe-overlay">
                         <h3 data-en="HOT HONEY PULLED PORK SANDWICH" data-km="សាំងវិចសាច់ជ្រូកហឺរជាមួយទឹកឃ្មុំ">HOT HONEY PULLED PORK SANDWICH</h3>
                         <div class="recipe-divider">
@@ -170,7 +175,7 @@
 
             <div class="recipe-card" data-category="meat">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Honey BBQ Wings">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Honey BBQ Wings">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY BBQ WINGS" data-km="ស្លាបមាន់បាបេគ្យូជាមួយទឹកឃ្មុំហឺរ">HONEY BBQ WINGS</h3>
                         <div class="recipe-divider">
@@ -184,7 +189,7 @@
 
             <div class="recipe-card" data-category="meat">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Meatballs">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Meatballs">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY MEATBALLS" data-km="បាល់សាច់ជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY MEATBALLS</h3>
                         <div class="recipe-divider">
@@ -198,7 +203,7 @@
 
             <div class="recipe-card" data-category="meat">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Lamb Chops">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Lamb Chops">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY GLAZED LAMB CHOPS" data-km="ឆ្អឹងជំនីកូនចៀមលាបទឹកឃ្មុំហឺរ">HONEY GLAZED LAMB CHOPS</h3>
                         <div class="recipe-divider">
@@ -212,7 +217,7 @@
 
             <div class="recipe-card" data-category="meat">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Grilled Kebabs">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Grilled Kebabs">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY GRILLED KEBABS" data-km="សាច់អាំងដោតឈើជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY GRILLED KEBABS</h3>
                         <div class="recipe-divider">
@@ -227,7 +232,7 @@
             <!-- FISH CATEGORY -->
             <div class="recipe-card" data-category="fish">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Honey Glazed Salmon">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Honey Glazed Salmon">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY GLAZED SALMON" data-km="ត្រីសាល់ម៉ុនលាបទឹកឃ្មុំហឺរ">HONEY GLAZED SALMON</h3>
                         <div class="recipe-divider">
@@ -241,7 +246,7 @@
 
             <div class="recipe-card" data-category="fish">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Spicy Shrimp">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Spicy Shrimp">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY SHRIMP" data-km="បង្គាជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY SHRIMP</h3>
                         <div class="recipe-divider">
@@ -255,7 +260,7 @@
 
             <div class="recipe-card" data-category="fish">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Fish Tacos">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Fish Tacos">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY DRIZZLED FISH TACOS" data-km="តាកូត្រីស្រោចទឹកឃ្មុំហឺរ">HONEY DRIZZLED FISH TACOS</h3>
                         <div class="recipe-divider">
@@ -269,7 +274,7 @@
 
             <div class="recipe-card" data-category="fish">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Tuna Poke Bowl">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Tuna Poke Bowl">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY TUNA POKE BOWL" data-km="បាយចានត្រីធូណាជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY TUNA POKE BOWL</h3>
                         <div class="recipe-divider">
@@ -283,7 +288,7 @@
 
             <div class="recipe-card" data-category="fish">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Grilled Fish">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Grilled Fish">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY GLAZED GRILLED FISH" data-km="ត្រីអាំងលាបទឹកឃ្មុំហឺរ">HONEY GLAZED GRILLED FISH</h3>
                         <div class="recipe-divider">
@@ -297,7 +302,7 @@
 
             <div class="recipe-card" data-category="fish">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Fried Calamari">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Fried Calamari">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY FRIED CALAMARI" data-km="ម្ហូបមឹកបំពងជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY FRIED CALAMARI</h3>
                         <div class="recipe-divider">
@@ -311,7 +316,7 @@
 
             <div class="recipe-card" data-category="fish">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Sushi Drizzle">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Sushi Drizzle">
                     <div class="recipe-overlay">
                         <h3 data-en="HOT HONEY SUSHI DRIZZLE" data-km="ស៊ូស៊ីស្រោចទឹកឃ្មុំហឺរ">HOT HONEY SUSHI DRIZZLE</h3>
                         <div class="recipe-divider">
@@ -325,7 +330,7 @@
 
             <div class="recipe-card" data-category="fish">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Ceviche">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Ceviche">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY CEVICHE" data-km="សេវីឆេជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY CEVICHE</h3>
                         <div class="recipe-divider">
@@ -340,7 +345,7 @@
             <!-- BREAKFAST CATEGORY -->
             <div class="recipe-card" data-category="breakfast">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Honey Butter Toast">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Honey Butter Toast">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY BUTTER TOAST" data-km="នំបុ័ងដុតប៊ឺរទឹកឃ្មុំហឺរ">HONEY BUTTER TOAST</h3>
                         <div class="recipe-divider">
@@ -354,7 +359,7 @@
 
             <div class="recipe-card" data-category="breakfast">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Spicy Breakfast Sandwich">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Spicy Breakfast Sandwich">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY BREAKFAST SANDWICH" data-km="សាំងវិចពេលព្រឹកហឺរ">SPICY BREAKFAST SANDWICH</h3>
                         <div class="recipe-divider">
@@ -368,7 +373,7 @@
 
             <div class="recipe-card" data-category="breakfast">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Waffles">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Waffles">
                     <div class="recipe-overlay">
                         <h3 data-en="HOT HONEY WAFFLES" data-km="វ៉ាហ្វលជាមួយទឹកឃ្មុំហឺរ">HOT HONEY WAFFLES</h3>
                         <div class="recipe-divider">
@@ -382,7 +387,7 @@
 
             <div class="recipe-card" data-category="breakfast">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Pancakes">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Pancakes">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY PANCAKES" data-km="បាំងខេកជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY PANCAKES</h3>
                         <div class="recipe-divider">
@@ -396,7 +401,7 @@
 
             <div class="recipe-card" data-category="breakfast">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Honey Yogurt Parfait">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Honey Yogurt Parfait">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY YOGURT PARFAIT" data-km="យ៉ាអួរជាមួយទឹកឃ្មុំហឺរ">HONEY YOGURT PARFAIT</h3>
                         <div class="recipe-divider">
@@ -410,7 +415,7 @@
 
             <div class="recipe-card" data-category="breakfast">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Breakfast Burrito">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Breakfast Burrito">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY BREAKFAST BURRITO" data-km="បូរីតូពេលព្រឹកជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY BREAKFAST BURRITO</h3>
                         <div class="recipe-divider">
@@ -424,7 +429,7 @@
 
             <div class="recipe-card" data-category="breakfast">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="French Toast">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="French Toast">
                     <div class="recipe-overlay">
                         <h3 data-en="HOT HONEY FRENCH TOAST" data-km="នំបុ័ងបារាំងអាំងជាមួយទឹកឃ្មុំហឺរ">HOT HONEY FRENCH TOAST</h3>
                         <div class="recipe-divider">
@@ -438,7 +443,7 @@
 
             <div class="recipe-card" data-category="breakfast">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Avocado Toast">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Avocado Toast">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY AVOCADO TOAST" data-km="នំបុ័ងអាវ៉ូកាដូជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY AVOCADO TOAST</h3>
                         <div class="recipe-divider">
@@ -453,7 +458,7 @@
             <!-- FAST FOOD CATEGORY -->
             <div class="recipe-card" data-category="fast-food">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Pizza Drizzle">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Pizza Drizzle">
                     <div class="recipe-overlay">
                         <h3 data-en="HOT HONEY PIZZA DRIZZLE" data-km="ភីហ្សាស្រោចទឹកឃ្មុំហឺរ">HOT HONEY PIZZA DRIZZLE</h3>
                         <div class="recipe-divider">
@@ -467,7 +472,7 @@
 
             <div class="recipe-card" data-category="fast-food">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Spicy Fries">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Spicy Fries">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY FRIES" data-km="ដំឡូងបារាំងហឺរជាមួយទឹកឃ្មុំ">SPICY HONEY FRIES</h3>
                         <div class="recipe-divider">
@@ -481,7 +486,7 @@
 
             <div class="recipe-card" data-category="fast-food">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Chicken Sandwich">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Chicken Sandwich">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY CHICKEN SANDWICH" data-km="សាំងវិចសាច់មាន់ជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY CHICKEN SANDWICH</h3>
                         <div class="recipe-divider">
@@ -495,7 +500,7 @@
 
             <div class="recipe-card" data-category="fast-food">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Onion Rings">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Onion Rings">
                     <div class="recipe-overlay">
                         <h3 data-en="HOT HONEY ONION RINGS" data-km="ខាត់ណាដំឡូងបំពងជាមួយទឹកឃ្មុំហឺរ">HOT HONEY ONION RINGS</h3>
                         <div class="recipe-divider">
@@ -509,7 +514,7 @@
 
             <div class="recipe-card" data-category="fast-food">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Chicken Nuggets">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Chicken Nuggets">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY DIPPED CHICKEN NUGGETS" data-km="ដុំសាច់មាន់ជ្រលក់ទឹកឃ្មុំហឺរ">HONEY DIPPED CHICKEN NUGGETS</h3>
                         <div class="recipe-divider">
@@ -523,7 +528,7 @@
 
             <div class="recipe-card" data-category="fast-food">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Loaded Nachos">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Loaded Nachos">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY LOADED NACHOS" data-km="ណាឆូសជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY LOADED NACHOS</h3>
                         <div class="recipe-divider">
@@ -537,7 +542,7 @@
 
             <div class="recipe-card" data-category="fast-food">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Mozzarella Sticks">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Mozzarella Sticks">
                     <div class="recipe-overlay">
                         <h3 data-en="HOT HONEY MOZZARELLA STICKS" data-km="ឈីសម៉ូហ្សារេឡាបំពងជាមួយទឹកឃ្មុំហឺរ">HOT HONEY MOZZARELLA STICKS</h3>
                         <div class="recipe-divider">
@@ -551,7 +556,7 @@
 
             <div class="recipe-card" data-category="fast-food">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Burgers">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Burgers">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY BURGER" data-km="ប៊ឺហ្គឺជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY BURGER</h3>
                         <div class="recipe-divider">
@@ -566,7 +571,7 @@
             <!-- VEGETABLES CATEGORY -->
             <div class="recipe-card" data-category="vegetables">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Roasted Brussels Sprouts">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Roasted Brussels Sprouts">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY ROASTED BRUSSELS SPROUTS" data-km="ខាត់ណាប្រ៊ូសែលអាំងជាមួយទឹកឃ្មុំ">HONEY ROASTED BRUSSELS SPROUTS</h3>
                         <div class="recipe-divider">
@@ -580,7 +585,7 @@
 
             <div class="recipe-card" data-category="vegetables">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Sweet Potato Fries">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Sweet Potato Fries">
                     <div class="recipe-overlay">
                         <h3 data-en="SWEET POTATO FRIES WITH HOT HONEY" data-km="ដំឡូងជ្វាបំពងជាមួយទឹកឃ្មុំហឺរ">SWEET POTATO FRIES WITH HOT HONEY</h3>
                         <div class="recipe-divider">
@@ -594,7 +599,7 @@
 
             <div class="recipe-card" data-category="vegetables">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Grilled Corn">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Grilled Corn">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY GRILLED CORN" data-km="ពោតអាំងជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY GRILLED CORN</h3>
                         <div class="recipe-divider">
@@ -608,7 +613,7 @@
 
             <div class="recipe-card" data-category="vegetables">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Honey Glazed Carrots">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Honey Glazed Carrots">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY GLAZED CARROTS" data-km="ការ៉ុតលាបទឹកឃ្មុំហឺរ">HONEY GLAZED CARROTS</h3>
                         <div class="recipe-divider">
@@ -622,7 +627,7 @@
 
             <div class="recipe-card" data-category="vegetables">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Spicy Cauliflower">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Spicy Cauliflower">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY CAULIFLOWER" data-km="ផ្កាខាត់ណាជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY CAULIFLOWER</h3>
                         <div class="recipe-divider">
@@ -636,7 +641,7 @@
 
             <div class="recipe-card" data-category="vegetables">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Roasted Butternut Squash">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Roasted Butternut Squash">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY ROASTED BUTTERNUT SQUASH" data-km="ល្ពៅបាទឺណាតអាំងជាមួយទឹកឃ្មុំ">HONEY ROASTED BUTTERNUT SQUASH</h3>
                         <div class="recipe-divider">
@@ -650,7 +655,7 @@
 
             <div class="recipe-card" data-category="vegetables">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Vegetable Stir-fry">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Vegetable Stir-fry">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY VEGETABLE STIR-FRY" data-km="បន្លែឆាជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY VEGETABLE STIR-FRY</h3>
                         <div class="recipe-divider">
@@ -664,7 +669,7 @@
 
             <div class="recipe-card" data-category="vegetables">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Avocado Halves">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Avocado Halves">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY DRIZZLED AVOCADO HALVES" data-km="អាវ៉ូកាដូកាត់ពាក់កណ្តាលស្រោចទឹកឃ្មុំហឺរ">HONEY DRIZZLED AVOCADO HALVES</h3>
                         <div class="recipe-divider">
@@ -679,7 +684,7 @@
             <!-- DESSERTS CATEGORY -->
             <div class="recipe-card" data-category="desserts">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Ice Cream Drizzle">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Ice Cream Drizzle">
                     <div class="recipe-overlay">
                         <h3 data-en="SWEET & SPICY ICE CREAM DRIZZLE" data-km="ការេមស្រោចទឹកឃ្មុំផ្អែមនិងហឺរ">SWEET & SPICY ICE CREAM DRIZZLE</h3>
                         <div class="recipe-divider">
@@ -693,7 +698,7 @@
 
             <div class="recipe-card" data-category="desserts">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Cheesecake Topping">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Cheesecake Topping">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY CHEESECAKE TOPPING" data-km="នំឈីសខេកជាមួយទឹកឃ្មុំហឺរ">SPICY CHEESECAKE TOPPING</h3>
                         <div class="recipe-divider">
@@ -707,7 +712,7 @@
 
             <div class="recipe-card" data-category="desserts">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Honey Fruit Tart">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Honey Fruit Tart">
                     <div class="recipe-overlay">
                         <h3 data-en="HOT HONEY FRUIT TART" data-km="តាតផ្លែឈើជាមួយទឹកឃ្មុំហឺរ">HOT HONEY FRUIT TART</h3>
                         <div class="recipe-divider">
@@ -721,7 +726,7 @@
 
             <div class="recipe-card" data-category="desserts">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Sweet & Spicy Brownies">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Sweet & Spicy Brownies">
                     <div class="recipe-overlay">
                         <h3 data-en="SWEET & SPICY BROWNIES" data-km="នំប្រោនីផ្អែមនិងហឺរ">SWEET & SPICY BROWNIES</h3>
                         <div class="recipe-divider">
@@ -735,7 +740,7 @@
 
             <div class="recipe-card" data-category="desserts">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Vanilla Pudding">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Vanilla Pudding">
                     <div class="recipe-overlay">
                         <h3 data-en="VANILLA PUDDING WITH HOT HONEY" data-km="ពូឌីងវ៉ានីឡាជាមួយទឹកឃ្មុំហឺរ">VANILLA PUDDING WITH HOT HONEY</h3>
                         <div class="recipe-divider">
@@ -749,7 +754,7 @@
 
             <div class="recipe-card" data-category="desserts">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Baked Apples">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Baked Apples">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY BAKED APPLES" data-km="ផ្លែប៉ោមអាំងជាមួយទឹកឃ្មុំហឺរ">HONEY BAKED APPLES</h3>
                         <div class="recipe-divider">
@@ -763,7 +768,7 @@
 
             <div class="recipe-card" data-category="desserts">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Donuts">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Donuts">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY GLAZED DONUTS" data-km="នំដូណាត់លាបទឹកឃ្មុំហឺរ">SPICY HONEY GLAZED DONUTS</h3>
                         <div class="recipe-divider">
@@ -777,7 +782,7 @@
 
             <div class="recipe-card" data-category="desserts">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Honey Cake">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Honey Cake">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY CAKE" data-km="នំខេកទឹកឃ្មុំហឺរ">SPICY HONEY CAKE</h3>
                         <div class="recipe-divider">
@@ -792,7 +797,7 @@
             <!-- DIPPING BOARD CATEGORY -->
             <div class="recipe-card" data-category="dipping-board">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Cheese Plate">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Cheese Plate">
                     <div class="recipe-overlay">
                         <h3 data-en="HONEY DRIZZLED CHEESE PLATE" data-km="ចានឈីសស្រោចទឹកឃ្មុំ">HONEY DRIZZLED CHEESE PLATE</h3>
                         <div class="recipe-divider">
@@ -806,7 +811,7 @@
 
             <div class="recipe-card" data-category="dipping-board">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Fried Cheese Curds">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Fried Cheese Curds">
                     <div class="recipe-overlay">
                         <h3 data-en="SPICY HONEY FRIED CHEESE CURDS" data-km="ដុំឈីសបំពងជាមួយទឹកឃ្មុំហឺរ">SPICY HONEY FRIED CHEESE CURDS</h3>
                         <div class="recipe-divider">
@@ -820,7 +825,7 @@
 
             <div class="recipe-card" data-category="dipping-board">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Artisan Bread">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Artisan Bread">
                     <div class="recipe-overlay">
                         <h3 data-en="ARTISAN BREAD WITH HOT HONEY" data-km="នំបុ័ងសិប្បកម្មជាមួយទឹកឃ្មុំហឺរ">ARTISAN BREAD WITH HOT HONEY</h3>
                         <div class="recipe-divider">
@@ -834,7 +839,7 @@
 
             <div class="recipe-card" data-category="dipping-board">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Pretzels">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Pretzels">
                     <div class="recipe-overlay">
                         <h3 data-en="PRETZELS WITH SPICY HONEY DIP" data-km="នំប្រេតហ្សេលជាមួយទឹកជ្រលក់ឃ្មុំហឺរ">PRETZELS WITH SPICY HONEY DIP</h3>
                         <div class="recipe-divider">
@@ -848,7 +853,7 @@
 
             <div class="recipe-card" data-category="dipping-board">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Crackers">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Crackers">
                     <div class="recipe-overlay">
                         <h3 data-en="CRACKERS WITH HOT HONEY" data-km="នំក្រាគឺជាមួយទឹកឃ្មុំហឺរ">CRACKERS WITH HOT HONEY</h3>
                         <div class="recipe-divider">
@@ -862,7 +867,7 @@
 
             <div class="recipe-card" data-category="dipping-board">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Fresh Fruit">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Fresh Fruit">
                     <div class="recipe-overlay">
                         <h3 data-en="FRESH FRUIT WITH SPICY HONEY" data-km="ផ្លែឈើស្រស់ជាមួយទឹកឃ្មុំហឺរ">FRESH FRUIT WITH SPICY HONEY</h3>
                         <div class="recipe-divider">
@@ -876,7 +881,7 @@
 
             <div class="recipe-card" data-category="dipping-board">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Charcuterie">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Charcuterie">
                     <div class="recipe-overlay">
                         <h3 data-en="CHARCUTERIE WITH HOT HONEY DRIZZLE" data-km="ចាឃូធើរីជាមួយទឹកឃ្មុំហឺរ">CHARCUTERIE WITH HOT HONEY DRIZZLE</h3>
                         <div class="recipe-divider">
@@ -890,7 +895,7 @@
 
             <div class="recipe-card" data-category="dipping-board">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Chicken Tenders">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Chicken Tenders">
                     <div class="recipe-overlay">
                         <h3 data-en="CHICKEN TENDERS WITH SPICY HONEY DIP" data-km="ឆ្អឹងទន់មាន់ជាមួយទឹកជ្រលក់ឃ្មុំហឺរ">CHICKEN TENDERS WITH SPICY HONEY DIP</h3>
                         <div class="recipe-divider">
@@ -904,7 +909,7 @@
 
             <div class="recipe-card" data-category="dipping-board">
                 <div class="recipe-image">
-                    <img src="img/placeholder.jpg" alt="Tortilla Chips">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/placeholder.jpg?alt=media&token=e9becdbd-8639-431d-9d98-84652c536ba2" alt="Tortilla Chips">
                     <div class="recipe-overlay">
                         <h3 data-en="TORTILLA CHIPS WITH HOT HONEY" data-km="ស្នូតទីយ៉ាជាមួយទឹកឃ្មុំហឺរ">TORTILLA CHIPS WITH HOT HONEY</h3>
                         <div class="recipe-divider">
