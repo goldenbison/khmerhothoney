@@ -1189,39 +1189,30 @@ button {
     .nav-container {
         padding: 15px 10px;
     }
-
     .logo img {
         height: 60px;
     }
-
     .hero {
         height: 200px;
     }
-
     .hero h2.script-font {
         font-size: 1.8rem;
     }
-
     .hero .hero-title {
         font-size: 2rem;
     }
-
     .recipe-image {
-        padding-bottom: 100%; /* Square aspect ratio for mobile */
+        padding-bottom: 65%; /* Smaller aspect ratio for mobile - reduced from 100% */
     }
-
     .recipe-overlay h3 {
         font-size: 1.1rem;
     }
-
     .product-grid {
         grid-template-columns: 1fr;
     }
-
     .social-purchase-buttons {
         flex-direction: column;
     }
-
     .ingredients-grid {
         grid-template-columns: 1fr;
     }
