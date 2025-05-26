@@ -38,7 +38,7 @@ body {
     line-height: 1.6;
     color: var(--color-black);
     background-color: var(--color-secondary);
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/background.png?alt=media&token=2a85dca8-89ab-42f0-86ea-7f6f00f7a550);
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/khh-background%20(1)%20(1).png?alt=media&token=fc5c5396-12ca-404e-8901-84125a625a5d");
     background-size: contain;
     background-repeat: repeat;
     /* background-position: center top; */
@@ -90,7 +90,7 @@ button {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/background.png?alt=media&token=2a85dca8-89ab-42f0-86ea-7f6f00f7a550');
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/khh-background%20(1)%20(1).png?alt=media&token=fc5c5396-12ca-404e-8901-84125a625a5d');
     background-size: 100% auto; /* Make width 100% of container, height auto */
     background-repeat: no-repeat; /* Don't repeat the image */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -1149,7 +1149,7 @@ button {
         flex-direction: column;
         align-items: center;
         background-color: var(--color-secondary);
-        background-image: url('https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/background.png?alt=media&token=2a85dca8-89ab-42f0-86ea-7f6f00f7a550');
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/khh-background%20(1)%20(1).png?alt=media&token=fc5c5396-12ca-404e-8901-84125a625a5d');
         background-size: cover;
         padding: 20px 0;
         gap: 15px;
@@ -1259,7 +1259,7 @@ button {
         flex-direction: column;
         align-items: center;
         background-color: var(--color-secondary);
-        background-image: url('https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/background.png?alt=media&token=2a85dca8-89ab-42f0-86ea-7f6f00f7a550');
+        background-image: url('https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/khh-background%20(1)%20(1).png?alt=media&token=fc5c5396-12ca-404e-8901-84125a625a5d');
         background-size: cover;
         padding: 20px 0;
         gap: 15px;
@@ -1552,7 +1552,7 @@ footer {
 /* .contact-section {
     padding: 60px 0;
     background-color: var(--color-secondary);
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/background.png?alt=media&token=2a85dca8-89ab-42f0-86ea-7f6f00f7a550);
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/khh-background%20(1)%20(1).png?alt=media&token=fc5c5396-12ca-404e-8901-84125a625a5d;
     background-size: contain;
     background-repeat: repeat;
     width: 100%;
