@@ -632,6 +632,53 @@ img {
     outline: 3px solid #c9a227;
     outline-offset: 2px;
 }
+/* Mobile menu improvements */
+@media (max-width: 968px) {
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+    }
+    
+    .hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-dark);
+    position: relative;
+    transition: var(--transition);
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-dark);
+    transition: var(--transition);
+}
+
+.hamburger::before {
+    transform: translateY(-8px);
+}
+
+.hamburger::after {
+    transform: translateY(8px);
+}
+.hamburger.active {
+    background: transparent;
+}
+
+.hamburger.active::before {
+    transform: rotate(45deg) translate(0);
+}
+
+.hamburger.active::after {
+    transform: rotate(-45deg) translate(0);
+}
+}
 </style>
 </head>
 <body>
@@ -877,28 +924,57 @@ img {
             return false;
         }
         
-        // Critical DOM ready functions
         document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            
-            if (menuToggle && navLinks && hamburger) {
-                menuToggle.addEventListener('click', function() {
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    
-                    // Toggle aria-expanded
-                    this.setAttribute('aria-expanded', !isExpanded);
-                    
-                    // Toggle classes
-                    navLinks.classList.toggle('active');
-                    hamburger.classList.toggle('active');
-                    
-                    // Prevent body scroll when menu is open
-                    document.body.classList.toggle('menu-open', !isExpanded);
-                });
-
+    console.log('DOM loaded - initializing mobile menu');
+    
+    // Get elements with specific IDs for reliability
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const hamburgerBars = document.querySelectorAll('.hamburger');
+    
+    // Debug logging
+    console.log('Menu toggle:', menuToggle);
+    console.log('Nav menu:', navMenu);
+    
+    if (!menuToggle || !navMenu) {
+        console.error('Menu elements not found!');
+        return;
+    }
+    
+    // Mobile menu toggle function
+    function toggleMobileMenu() {
+        console.log('Toggle clicked');
+        
+        navMenu.classList.toggle('active');
+        hamburgerBars.forEach(bar => bar.classList.toggle('active'));
+        document.body.classList.toggle('menu-open');
+        
+        console.log('Menu active:', navMenu.classList.contains('active'));
+    }
+    
+    // Click event
+    menuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMobileMenu();
+    });
+    
+    // Touch event for mobile
+    menuToggle.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        toggleMobileMenu();
+    });
+    
+    // Close menu when clicking nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 968 && navMenu.classList.contains('active')) {
+                toggleMobileMenu();
             }
+        });
+    });
+
             // Language toggle functionality
             const langToggle = document.getElementById('lang-toggle');
             if (langToggle) {
