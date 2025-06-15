@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get the current host including protocol and port
         const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
         const baseUrl = isLocal ? 
-            window.location.origin + '/?r=' : 
-            'https://www.khmerhothoney.com/?r=';
+            window.location.origin + '/uses?r=' : 
+            'https://www.khmerhothoney.com/uses?r=';
         
         console.log("Using base URL for QR codes:", baseUrl);
         
@@ -200,8 +200,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (urlFormatExample) {
         const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
         const exampleUrl = isLocal ? 
-            window.location.origin + '/?location=PizzaHutBKK1-1' : 
-            'https://www.khmerhothoney.com/?location=PizzaHutBKK1-1';
+            window.location.origin + '/uses?location=PizzaHutBKK1-1' : 
+            'https://www.khmerhothoney.com/uses?location=PizzaHutBKK1-1';
         
         urlFormatExample.textContent = exampleUrl;
     }
