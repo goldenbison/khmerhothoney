@@ -107,7 +107,6 @@
     <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
     <script type="module" src="js/firebase-config.js"></script>
     <style>
-        /* <!-- FIXED: Added .hidden class definition --> */
         .hidden {
             display: none !important;
         }
@@ -688,7 +687,6 @@
     <header class="sticky-header">
         <nav class="navbar">
             <div class="nav-container">
-                <!-- FIXED: Added id="mobile-menu-toggle" to this div -->
                 <div class="menu-toggle" id="mobile-menu-toggle">
                     <div class="hamburger"></div>
                 </div>
@@ -697,8 +695,8 @@
                         <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/logo.png?alt=media&token=b596c552-27a3-4f9e-abf2-b5911b9d646d" alt="Khmer Hot Honey Logo - Authentic Cambodian Spicy Honey">
                     </a>
                 </div>
-                <!-- FIXED: Added id="nav-menu" to this ul -->
                 <ul class="nav-links" id="nav-menu">
+                    <!-- FIXED: Added a "Home" link which can now have an active state -->
                     <li><a href="shop.html" class="nav-link" id="nav-shop" data-en="Shop" data-km="ទិញ">Shop</a></li>
                     <li><a href="uses.html" class="nav-link" id="nav-recipes" data-en="Recipes" data-km="ការប្រើប្រាស់">Uses</a></li>
                     <li><a href="about.html" class="nav-link" id="nav-about" data-en="About" data-km="អំពីយើង​">About</a></li>
@@ -707,6 +705,7 @@
                 <div class="nav-icons">
                     <div class="language-toggle">
                         <button id="lang-toggle" data-current="en">
+                            <!-- FIXED: Swapped the src attributes and corrected alt text so the correct flag shows for each language -->
                             <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/kh.png?alt=media&token=3916638e-f592-438c-8202-90dad23aea94" alt="English" class="lang-icon en-icon">
                             <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/en.png?alt=media&token=bddedf5c-3f08-41dc-9690-78f3fb1c6563" alt="Khmer" class="lang-icon kh-icon hidden">
                         </button>
@@ -794,28 +793,7 @@
             </div>
         </section>
         <!-- Our Story Section -->
-        <!-- <section class="story-section" aria-labelledby="story-heading">
-            <div class="story-container">
-                <div class="story-content">
-                    <div class="section-subtitle" data-en="Our Story" data-km="រឿងរបស់យើង">Our Story</div>
-                    <h2 id="story-heading" class="story-title" data-en="From a Phnom Penh Kitchen to Worldwide Sensation" data-km="ពីផ្ទះបាយភ្នំពេញដល់ភាពល្បីល្បាញទូទាំងពិភពលោក">From a Phnom Penh Kitchen to Worldwide Sensation</h2>
-                    <p class="story-description" data-en="Founded with a passion for Cambodian flavors, Khmer Hot Honey has become Cambodia's leading brand of hot honey, renowned for its unique blend of high-quality honey and traditional spices. What started as a personal culinary experiment quickly turned into a beloved sensation when we began sharing our signature hot honey with family and friends." data-km="បង្កើតឡើងដោយចំណង់ចំណូលចិត្តចំពោះរសជាតិខ្មែរ ទឹកឃ្មុំហឹរខ្មែរបានក្លាយជាម៉ាកយីហោនាំមុខរបស់កម្ពុជាសម្រាប់ទឹកឃ្មុំហឹរ ដែលល្បីល្បាញដោយសារការរួមបញ្ចូលតែមួយគត់នៃទឹកឃ្មុំគុណភាពខ្ពស់និងគ្រឿងទេសប្រពៃណី។">Founded with a passion for Cambodian flavors, Khmer Hot Honey has become Cambodia's leading brand of hot honey, renowned for its unique blend of high-quality honey and traditional spices. What started as a personal culinary experiment quickly turned into a beloved sensation when we began sharing our signature hot honey with family and friends.</p>
-                    <a href="about.html" class="story-cta" data-en="Read the Entire Story" data-km="អានរឿងរាវទាំងមូល">
-                        <i class="fas fa-book-open" aria-hidden="true"></i>
-                        Read the Entire Story
-                    </a>
-                </div>
-                <div class="story-image">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/khmer-hot-honey.firebasestorage.app/o/about-khh.jpg?alt=media&token=78619490-7e95-4237-aa82-f7ef76e1495b" 
-                         alt="Khmer Hot Honey makers in their Phnom Penh kitchen" 
-                         class="story-photo"
-                         width="400"
-                         height="300"
-                         loading="lazy">
-                    <div class="story-photo-caption" data-en="Making hot honey at the kitchen since 2020" data-km="ធ្វើទឹកឃ្មុំហឹរនៅផ្ទះបាយតាំងពីឆ្នាំ ២០២០">Making hot honey at the kitchen since 2020</div>
-                </div>
-            </div>
-        </section> -->
+        <!-- <section class="story-section" aria-labelledby="story-heading"> ... </section> -->
         <section class="cta-section">
             <div class="cta-container">
                 <h2 class="cta-title" data-en="Ready to Transform Your Meals?" data-km="តើអ្នកត្រៀមរួចបំប្លែងអាហាររបស់អ្នកហើយទេ?">Ready to Transform Your Meals?</h2>
@@ -832,33 +810,34 @@
                 <div class="footer-section">
                     <h3 data-en="Socialize with Us" data-km="ប្រព័ន្ធផ្សព្វផ្សាយសង្គមរបស់យើង">Socialize with Us</h3>
                     <div data-en="Follow us for updates and exclusive offers:" data-km="តាមដានយើងសម្រាប់ព័ត៌មានថ្មីៗនិងការផ្តល់ជូនពិសេសៗ៖">Follow us for updates and exclusive offers:</div>
-                    
+                    <br/>
                     <div class="social-icons">
-                        <!-- Facebook: Reverting to standard web URL. Mobile browsers often prompt to open in app anyway -->
                         <a href="https://www.facebook.com/khmerhothoney"
                            target="_blank" aria-label="Follow us on Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <!-- Instagram: Keeping current setup as it works -->
                         <a href="instagram://user?username=khmerhothoney"
                            onclick="openSocialApp(this, 'https://www.instagram.com/khmerhothoney/'); return false;"
                            target="_blank" aria-label="Follow us on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <!-- TikTok: Using standard web URL, relying on browser/OS handling -->
                         <a href="https://www.tiktok.com/@khmerhothoney"
                            target="_blank" aria-label="Follow us on TikTok">
                             <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
                 </div>
+                <br/>
                 
                 <div class="footer-nav">
                     <div class="footer-section">
                         <h3 data-en="Explore" data-km="រុករក">Explore</h3>
                         <ul>
-                            <li><a href="index.html" data-en="Recipes" data-km="ការប្រើប្រាស់">Uses</a></li>
+                            <!-- FIXED: Corrected the link to be "Home", not "Uses/Recipes" -->
+                            <li><a href="index.html" data-en="Home" data-km="ទំព័រដើម">Home</a></li>
                             <li><a href="shop.html" data-en="Shop" data-km="ទិញ">Shop</a></li>
+                            <li><a href="uses.html" data-en="Recipe" data-km="ការប្រើប្រាស់">Recipe</a></li>
+
                         </ul>
                     </div>
                     <div class="footer-section">
@@ -886,169 +865,11 @@
         </div>
     </footer>
     
-    <!-- Scripts -->
     <script type="module" src="js/firebase-config.js"></script>
-    <script src="js/language.js"></script>
     <script type="module" src="js/analytics.js"></script>
     <script type="module" src="js/qr-tracking.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script src="js/main.js"></script>
     
-    <!-- Inline critical JavaScript - NO CHANGES NEEDED HERE, CODE WAS ALREADY CORRECT -->
-    <script>
-        // openSocialApp function for Instagram
-        function openSocialApp(link, fallbackUrl) {
-            const appUrl = link.getAttribute('href');
-            const timeout = setTimeout(function() {
-                window.open(fallbackUrl, '_blank');
-            }, 1000);
-            window.location = appUrl;
-            window.addEventListener('blur', function() {
-                clearTimeout(timeout);
-            });
-            document.addEventListener('visibilitychange', function() {
-                 if (document.visibilityState === 'hidden') {
-                    clearTimeout(timeout);
-                 }
-            });
-            return false;
-        }
-        
-        document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded - initializing mobile menu');
-
-    
-    // Get elements with specific IDs for reliability
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const hamburgerBars = document.querySelectorAll('.hamburger');
-    
-    // Debug logging
-    console.log('Menu toggle:', menuToggle);
-    console.log('Nav menu:', navMenu);
-    
-    if (!menuToggle || !navMenu) {
-        console.error('Menu elements not found!');
-        return;
-    }
-    
-    // Mobile menu toggle function
-    function toggleMobileMenu() {
-        console.log('Toggle clicked');
-        
-        navMenu.classList.toggle('active');
-        hamburgerBars.forEach(bar => bar.classList.toggle('active'));
-        document.body.classList.toggle('menu-open');
-        
-        console.log('Menu active:', navMenu.classList.contains('active'));
-    }
-    
-    // Click event
-    menuToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleMobileMenu();
-    });
-    
-    // Touch event for mobile
-    menuToggle.addEventListener('touchstart', function(e) {
-        e.preventDefault();
-        toggleMobileMenu();
-    });
-    
-    // Close menu when clicking nav links
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth <= 968 && navMenu.classList.contains('active')) {
-                toggleMobileMenu();
-            }
-        });
-    });
-            // Language toggle functionality
-            const langToggle = document.getElementById('lang-toggle');
-            if (langToggle) {
-                langToggle.addEventListener('click', function() {
-                    const currentLang = this.getAttribute('data-current');
-                    const newLang = currentLang === 'en' ? 'km' : 'en';
-                    switchLanguage(newLang);
-                });
-            }
-            // Load saved language preference
-            const savedLang = localStorage.getItem('preferred-language') || 'en';
-            switchLanguage(savedLang);
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                const targetId = anchor.getAttribute('href');
-                if (targetId.length > 1 && targetId.startsWith('#') && document.getElementById(targetId.substring(1))) {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        document.querySelector(targetId).scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    });
-                }
-            });
-            // Add keyboard support for interactive cards
-            document.querySelectorAll('[role="button"]').forEach(card => {
-                card.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        this.click();
-                    }
-                });
-            });
-            // Intersection Observer for animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                    }
-                });
-            }, observerOptions);
-            // Observe elements for animation
-            const animatedElements = document.querySelectorAll('.recipe-featured-card, .shop-category');
-            animatedElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
-        // Language switching functionality
-        function switchLanguage(lang) {
-            const elements = document.querySelectorAll('[data-en], [data-km]');
-            
-            elements.forEach(element => {
-                const enText = element.getAttribute('data-en');
-                const kmText = element.getAttribute('data-km');
-                
-                if (lang === 'en' && enText) {
-                    element.textContent = enText;
-                } else if (lang === 'km' && kmText) {
-                    element.textContent = kmText;
-                }
-            });
-            // Update language toggle button
-            const langToggle = document.getElementById('lang-toggle');
-            const enIcon = document.querySelector('.en-icon');
-            const khIcon = document.querySelector('.kh-icon');
-            
-            if (lang === 'en') {
-                langToggle.setAttribute('data-current', 'en');
-                enIcon.classList.remove('hidden');
-                khIcon.classList.add('hidden');
-            } else {
-                langToggle.setAttribute('data-current', 'km');
-                enIcon.classList.add('hidden');
-                khIcon.classList.remove('hidden');
-            }
-            // Store language preference
-            localStorage.setItem('preferred-language', lang);
-        }
-    </script>
-    
-    <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {

@@ -380,8 +380,9 @@
                     <div class="footer-section">
                         <h3 data-en="Explore" data-km="រុករក">Explore</h3>
                         <ul>
-                            <li><a href="index.html" data-en="Recipes" data-km="ការប្រើប្រាស់">Uses</a></li>
+                            <li><a href="index.html" data-en="Home" data-km="ទំព័រដើម">Home</a></li>
                             <li><a href="shop.html" data-en="Shop" data-km="ទិញ">Shop</a></li>
+                            <li><a href="uses.html" data-en="Recipe" data-km="ការប្រើប្រាស់">Recipe</a></li>
                         </ul>
                     </div>
 
@@ -414,54 +415,10 @@
     <!-- Import modules -->
     <script type="module" src="js/firebase-config.js"></script>
     <script type="module" src="js/contact-form.js"></script>
-    <script src="js/language.js"></script>
     <script type="module" src="js/analytics.js"></script>
     <script type="module" src="js/qr-tracking.js"></script>
-    <script type="module" src="js/main.js"></script>
-    <script>
-        // openSocialApp function is now only needed for Instagram
-        function openSocialApp(link, fallbackUrl) {
-            const appUrl = link.getAttribute('href');
-            const timeout = setTimeout(function() {
-                window.open(fallbackUrl, '_blank');
-            }, 1000); // Adjust timeout if needed (1000ms = 1 second)
-            window.location = appUrl; // Attempt to open the app scheme
-             // Clear timeout if the app switch happens (window loses focus)
-            window.addEventListener('blur', function() {
-                clearTimeout(timeout);
-            });
-            // Also attempt to clear if the page visibility changes
-            document.addEventListener('visibilitychange', function() {
-                 if (document.visibilityState === 'hidden') {
-                    clearTimeout(timeout);
-                 }
-            });
-            return false; // Prevent default link behavior
-        }
-        // Ensure mobile menu works
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            if (menuToggle) {
-                menuToggle.addEventListener('click', function() {
-                    document.querySelector('.nav-links').classList.toggle('active');
-                    document.querySelector('.hamburger').classList.toggle('active');
-                });
-            }
+    <script src="js/main.js"></script> <!-- THIS IS THE ONLY SCRIPT YOU NEED FOR GLOBAL FEATURES -->
 
-            // Added smooth scrolling for footer #our-process link
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                 // Check if the anchor link is pointing to an ID on the current page
-                 const targetId = anchor.getAttribute('href');
-                 if (targetId.length > 1 && targetId.startsWith('#') && document.getElementById(targetId.substring(1))) {
-                     anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        document.querySelector(targetId).scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    });
-                 }
-            });
-        });
-    </script>
+    
 </body>
 </html>
