@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // --- Recipe category filter and pagination ---
     const categoryItems = document.querySelectorAll('.category-item');
     const recipeCards = document.querySelectorAll('.recipe-card');
     const pageNumbersContainer = document.querySelector('.page-numbers');
