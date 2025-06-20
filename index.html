@@ -83,7 +83,7 @@
       "sameAs": [
         "https://www.facebook.com/khmerhothoney",
         "https://www.instagram.com/khmerhothoney/",
-        "https://www.tiktok.com/@khmerhothoney"
+        "https://www.tiktok.com/@khmer.hot.honey"
       ],
       "priceRange": "$$",
       "servesCuisine": ["Cambodian", "Asian"],
@@ -156,18 +156,46 @@
             animation: slideInLeft 1s ease-out;
         }
         .hero-tagline {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: 2.5rem;
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: -1px;
         }
+        @font-face {
+        font-family: 'Maragsa';
+        src: url('./fonts/Maragsa-Display.woff2') format('woff2'),
+            url('./fonts/Maragsa-Display.woff') format('woff'),
+            url('./fonts/Maragsa-Display.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        }
+
+        @font-face {
+        font-family: 'Feeling Passionate';
+        src: url('./fonts/Feeling Passionate.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        }
+
         .hero-script {
-            font-family: 'Maragsa';
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-family: 'Maragsa', serif;
+            font-size: clamp(4.5rem, 4vw, 3.5rem);
             color: #f0e6d2;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+        }
+
+        .brand-name {
+            font-family: 'Feeling Passionate', cursive;
+            text-transform: lowercase; /* Makes it "Khmer" */
+            font-size: clamp(4.5rem, 4vw, 3.5rem);
+        }
+
+        .product-name {
+            font-family: 'Maragsa', serif;
         }
         .hero-description {
             font-size: clamp(1rem, 1.5vw, 1.3rem);
@@ -501,6 +529,11 @@
         }
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .brand-name::after {
+                content: '\A'; /* Line break character */
+                white-space: pre; /* Makes the line break work */
+            }
+
             .hero-banner {
                 min-height: 100vh;
                 background-attachment: scroll;
@@ -719,9 +752,12 @@
         <section class="hero-banner" role="banner" aria-labelledby="hero-heading">
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1 id="hero-heading" class="hero-tagline" data-en="You'll Love It With" data-km="អ្នកនឹងចូលចិត្តជាមួយ">You'll Love It With</h1>
-                    <div class="hero-script" data-en="KHMER HOT HONEY" data-km="ទឹកឃ្មុំហឹរខ្មែរ">KHMER HOT HONEY</div>
-                    <p class="hero-description" data-en="Authentic Cambodian spicy honey that transforms every meal. Our premium hot honey combines flavors with the perfect balance of sweet and heat." data-km="ទឹកឃ្មុំហឹរខ្មែរដែលបំប្លែងរាល់អាហារ។ ទឹកឃ្មុំហឹរពិសេសរបស់យើងផ្សំបញ្ចូលរសជាតិជាមួយតុល្យភាពល្អឥតខ្ចោះនៃភាពផ្អែមនិងហឹរ។">Authentic Cambodian spicy honey that transforms every meal. Our premium hot honey combines traditional Khmer flavors with the perfect balance of sweet and heat.</p>
+                    <h1 id="hero-heading" class="hero-tagline" data-en="Drizzle On Sweet Heat With" data-km="ចាក់រសជាតិផ្អែមហឹរជាមួយ">Drizzle On Sweet Heat With</h1>
+                    <div class="hero-script">
+                        <span class="brand-name" data-en="KHMER" data-km="ទឹកឃ្មុំ">KHMER</span>
+                        <span class="product-name" data-en="HOT HONEY" data-km="ហឹរខ្មែរ">HOT HONEY</span>
+                    </div>
+                    <p class="hero-description" data-en="Handcrafted in small batches combining raw wildflower Cambodian honey with chili pepper, our premium hot honey creates the perfect balance of sweet and heat." data-km="ទឹកឃ្មុំផ្កាព្រៃ លាយជាមួយម្ទេស ដែលបង្កើតបានជារសជាតិដ៏ឈ្ងុយឆ្ងាញ់រវាងភាពផ្អែមនិងហឹរ។ ផលិតផលគុណភាពខ្ពស់ ផលិតក្នុងបរិមាណកំណត់។">Handcrafted in small batches combining raw wildflower Cambodian honey with chili pepper, our premium hot honey creates the perfect balance of sweet and heat.</p>
                     <div class="hero-cta">
                         <a href="shop.html" class="cta-button" data-en="Shop Now" data-km="ទិញឥឡូវ">
                             <i class="fas fa-shopping-cart" aria-hidden="true"></i>
@@ -767,7 +803,7 @@
                             <h3 data-en="HONEY GLAZED SALMON" data-km="ត្រីសាល់ម៉ុនលាបទឹកឃ្មុំហឹរ">HONEY GLAZED SALMON</h3>
                             <div class="recipe-divider">
                                 <div class="recipe-category">
-                                    <span data-en="Fish" data-km="ត្រី">Fish</span>
+                                    <span data-en="Seafood" data-km="គ្រឿងសមុទ្រ">Seafood</span>
                                 </div>
                             </div>
                         </div>
@@ -821,7 +857,7 @@
                            target="_blank" aria-label="Follow us on Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@khmerhothoney"
+                        <a href="https://www.tiktok.com/@khmer.hot.honey"
                            target="_blank" aria-label="Follow us on TikTok">
                             <i class="fab fa-tiktok"></i>
                         </a>
@@ -882,6 +918,15 @@
                     });
             });
         }
+        
+        function switchLanguage(lang) {
+            const brandName = document.querySelector('.brand-name');
+            const productName = document.querySelector('.product-name');
+            
+            brandName.textContent = brandName.getAttribute(`data-${lang}`);
+            productName.textContent = productName.getAttribute(`data-${lang}`);
+        }
     </script>
+    
 </body>
 </html>
