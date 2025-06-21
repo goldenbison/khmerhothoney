@@ -45,6 +45,23 @@ body {
     background-repeat: repeat;
     /* background-position: center top; */
 }
+@font-face {
+    font-family: 'Maragsa';
+    src: url('../fonts/Maragsa-Display.woff2') format('woff2'),
+        url('../fonts/Maragsa-Display.woff') format('woff'),
+        url('../fonts/Maragsa-Display.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    }
+
+    @font-face {
+    font-family: 'Feeling Passionate';
+    src: url('../fonts/Feeling Passionate.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    }
 
 a {
     text-decoration: none;
@@ -675,9 +692,10 @@ button {
 
 .product-image-container {
     position: relative;
-    width: 100%;
+    width: 125%;
     padding: 0;
     background-color: transparent;
+    justify-self: center;
 }
 
 .product-image-container img {
@@ -817,7 +835,6 @@ button {
     flex: 1;
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: var(--box-shadow);
 }
 
 .about-ingredients {
@@ -1138,6 +1155,12 @@ button {
 }
 
 @media (max-width: 768px) {
+    .story-content {
+        display: flex;
+        gap: 0px;
+        align-items: center;
+    }
+
     .menu-toggle {
         display: flex; /* This ensures the toggle is visible on mobile */
         z-index: 1100; /* Higher z-index to ensure it's clickable */
