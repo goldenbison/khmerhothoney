@@ -696,6 +696,7 @@ button {
     padding: 0;
     background-color: transparent;
     justify-self: center;
+    text-align: center; /* centers inline-block/inline elements */
 }
 
 .product-image-container img {
@@ -703,6 +704,7 @@ button {
     height: auto;
     display: block;
     object-fit: contain;
+    margin: 0 auto; /* centers block elements horizontally */
 }
 
 .product-badge {
