@@ -45,6 +45,14 @@ body {
     background-repeat: repeat;
     /* background-position: center top; */
 }
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 @font-face {
     font-family: 'Maragsa';
     src: url('../fonts/Maragsa-Display.woff2') format('woff2'),
@@ -675,13 +683,11 @@ button {
     align-items: center;
 }
 
-/* Product card styling to match the image */
 .product-card-new {
     border-radius: 6px;
-    overflow: hidden;
+    overflow: hidden; /* This clips the extended image */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: white;
 }
 
@@ -692,19 +698,21 @@ button {
 
 .product-image-container {
     position: relative;
-    width: 125%;
+    width: calc(100% + 120px); /* Increased to 120px */
+    margin-left: -60px; /* Increased to -60px */
+    margin-right: -60px; /* Increased to -60px */
     padding: 0;
     background-color: transparent;
-    justify-self: center;
-    text-align: center; /* centers inline-block/inline elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-image-container img {
-    width: 120%;
+    width: 100%;
     height: auto;
     display: block;
     object-fit: contain;
-    margin: 0 auto; /* centers block elements horizontally */
 }
 
 .product-badge {
@@ -775,6 +783,15 @@ button {
 .shop-intro .intro-text h2 {
     margin-top: 0;
     justify-self: center;
+}
+
+/* Mobile adjustments - INCREASED VALUES */
+@media (max-width: 768px) {
+    .product-image-container {
+        width: calc(100% + 100px); /* Increased from 60px */
+        margin-left: -50px; /* Increased from -30px */
+        margin-right: -50px; /* Increased from -30px */
+    }
 }
 
 /* Responsive adjustments */
