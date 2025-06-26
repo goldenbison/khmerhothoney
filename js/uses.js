@@ -1,5 +1,4 @@
 // js/uses.js - Script specifically for the recipe/uses page
-
 // Global variables (adjusted to fit the existing uses.js structure)
 let currentCategory = 'all'; // Keep track of the active category
 let allRecipeCards = []; // Store all recipe cards in their initial DOM order
@@ -14,11 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!recipeContainer) {
         return;
     }
-
     // Capture all recipe cards once the DOM is loaded
     allRecipeCards = Array.from(document.querySelectorAll('.recipe-card'));
     console.log('Total recipe cards found:', allRecipeCards.length);
-
     // Initial setup: filter for 'all' and then display the first page.
     // This will also handle the initial shuffle if 'all' is the default.
     filterAndShuffleRecipes('all'); 
@@ -39,7 +36,7 @@ function shuffleArray(array) {
 function filterAndShuffleRecipes(category) {
     console.log('Filtering and shuffling for category:', category);
     currentCategory = category; // Update global currentCategory
-
+    
     // 1. Filter the recipes
     if (category === 'all') {
         filteredCards = Array.from(allRecipeCards); // Start with all original cards
@@ -47,15 +44,15 @@ function filterAndShuffleRecipes(category) {
         filteredCards = Array.from(allRecipeCards).filter(card => card.getAttribute('data-category') === category);
     }
     console.log('Filtered cards count:', filteredCards.length);
-
+    
     // 2. Shuffle the filtered recipes
     // We want to shuffle every time a category is selected, including 'all'
     filteredCards = shuffleArray(filteredCards);
     console.log('Filtered cards shuffled.');
-
+    
     // Reset to the first page after filtering/shuffling
     currentPage = 1; 
-
+    
     // Now, display the correct page based on the new filtered and shuffled order
     displayPage();
     updatePaginationUI(); // Ensure pagination reflects new total pages
@@ -64,6 +61,7 @@ function filterAndShuffleRecipes(category) {
 // Function to display the current page of recipes
 function displayPage() {
     const recipeCards = document.querySelectorAll('.recipe-card'); // Re-select to ensure all are included
+    
     // Hide all cards first, regardless of their current visibility state
     recipeCards.forEach(card => card.style.display = 'none');
     
@@ -80,7 +78,6 @@ function displayPage() {
         void card.offsetWidth; // Trigger reflow for animation reset
         card.classList.add('fade-in'); // Apply fade-in animation
     });
-
     console.log(`Displaying page ${currentPage}. Cards from index ${startIndex} to ${endIndex}.`);
 }
 
@@ -89,7 +86,6 @@ function updatePaginationUI() {
     const pageNumbersContainer = document.querySelector('.page-numbers');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-
     const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
     
     // Clear existing page numbers
@@ -101,15 +97,15 @@ function updatePaginationUI() {
          if (nextBtn) nextBtn.style.display = 'none';
          return;
     }
-
+    
     // Show pagination controls
     if (prevBtn) prevBtn.style.display = 'inline-flex';
     if (nextBtn) nextBtn.style.display = 'inline-flex';
-
+    
     // Disable/enable prev/next buttons
     if (prevBtn) prevBtn.disabled = (currentPage === 1);
     if (nextBtn) nextBtn.disabled = (currentPage === totalPages);
-
+    
     // Create page number spans
     for (let i = 1; i <= totalPages; i++) {
         const pageNumber = document.createElement('span');
@@ -118,10 +114,14 @@ function updatePaginationUI() {
         if (i === currentPage) {
             pageNumber.classList.add('active');
         }
+        
+        // Add click listener to each page number
         pageNumber.addEventListener('click', () => {
             currentPage = i;
-            displayPage(); // Just display the page, filterAndShuffle handles reset
+            displayPage();
+            updatePaginationUI(); // Update UI after page change
         });
+        
         if (pageNumbersContainer) pageNumbersContainer.appendChild(pageNumber);
     }
     console.log(`Pagination UI updated. Total pages: ${totalPages}, Current page: ${currentPage}`);
@@ -139,27 +139,27 @@ document.addEventListener('DOMContentLoaded', function() {
             filterAndShuffleRecipes(category); // Filter, shuffle, and display
         });
     });
-
+    
     // Event Listeners for Pagination Buttons
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-
+    
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
             if (currentPage > 1) {
                 currentPage--;
-                displayPage(); // Just display the next/prev page
+                displayPage(); // Display the previous page
                 updatePaginationUI(); // Update button states and active page number
             }
         });
     }
-
+    
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
             const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
             if (currentPage < totalPages) {
                 currentPage++;
-                displayPage(); // Just display the next/prev page
+                displayPage(); // Display the next page
                 updatePaginationUI(); // Update button states and active page number
             }
         });
